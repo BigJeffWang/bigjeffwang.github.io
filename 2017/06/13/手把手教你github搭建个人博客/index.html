@@ -1,17 +1,21 @@
+<!DOCTYPE html>
 
- <!DOCTYPE HTML>
-<html >
+
+  <html class="light page-post">
+
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>BigJeffWang&#39;s Blog 王晔的博客</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="BigJeffWang">
-    
+  <title>BigJeffWang&#39;s Blog 王晔的博客</title>
 
-    
-    <meta name="description" content="本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。 最开始的时候，都是把自己的技术文档、安装攻略，整理到云笔记上，但是后来，云笔记渐渐的不好用了 ，主要原因还是因为他们都开始通过各种方式收费或者限制了，我用过 印象、有道、为知 等等，当我一次次的迁徙我的笔记的时候，就是我一次次的跳入一个坑。当然，我是支持云笔记收费的，只是他">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。 最开始的时候，都是把自己的技术文档、安装攻略，整理到云笔记上，但是后来，云笔记渐渐的不好用了 ，主要原因还是因为他们都开始通过各种方式收费或者限制了，我用过 印象、有道、为知 等等，当我一次次的迁徙我的笔记的时候，就是我一次次的跳入一个坑。当然，我是支持云笔记收费的，只是他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BigJeffWang&#39;s Blog 王晔的博客">
 <meta property="og:url" content="http://yoursite.com/2017/06/13/手把手教你github搭建个人博客/index.html">
@@ -44,85 +48,212 @@
 <meta name="twitter:description" content="本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。 最开始的时候，都是把自己的技术文档、安装攻略，整理到云笔记上，但是后来，云笔记渐渐的不好用了 ，主要原因还是因为他们都开始通过各种方式收费或者限制了，我用过 印象、有道、为知 等等，当我一次次的迁徙我的笔记的时候，就是我一次次的跳入一个坑。当然，我是支持云笔记收费的，只是他">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6298250-7522dbe127fbd1fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
-    
-    <link rel="alternative" href="/atom.xml" title="BigJeffWang&#39;s Blog 王晔的博客" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
 </head>
 
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="BigJeffWang&#39;s Blog 王晔的博客" title="BigJeffWang&#39;s Blog 王晔的博客"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="BigJeffWang&#39;s Blog 王晔的博客">BigJeffWang&#39;s Blog 王晔的博客</a></h1>
-				<h2 class="blog-motto">BigJeffWang&#39;s Blog</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+<body>
+
+
   
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-搭建-Node-js-环境"><span class="toc-text">1. 搭建 Node.js 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-搭建-Git-环境"><span class="toc-text">2. 搭建 Git 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitHub-注册和配置"><span class="toc-text">3. GitHub 注册和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装配置-Hexo"><span class="toc-text">4. 安装配置 Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-关联Hexo与GitHub-Pages"><span class="toc-text">5. 关联Hexo与GitHub Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-多个git账号，该如何设置"><span class="toc-text">6. 多个git账号，该如何设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Hexo-的常用操作"><span class="toc-text">7. Hexo 的常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-结束语"><span class="toc-text">8. 结束语</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-手把手教你github搭建个人博客" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">(no title)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.06.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>BigJeffWang</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2017/06/13/手把手教你github搭建个人博客/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
     
-      <a href="/2017/06/13/手把手教你github搭建个人博客/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="BigJeffWang" target="_blank" itemprop="author">BigJeffWang</a>
-		
-  <p class="article-time">
-    <time datetime="2017-06-13T08:45:43.613Z" itemprop="datePublished"> Published 2017-06-13</time>
-    
-  </p>
-</header>
-	<div class="article-content">
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-搭建-Node-js-环境"><span class="toc-number">1.</span> <span class="toc-text">1. 搭建 Node.js 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-搭建-Git-环境"><span class="toc-number">2.</span> <span class="toc-text">2. 搭建 Git 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitHub-注册和配置"><span class="toc-number">3.</span> <span class="toc-text">3. GitHub 注册和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装配置-Hexo"><span class="toc-number">4.</span> <span class="toc-text">4. 安装配置 Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-关联Hexo与GitHub-Pages"><span class="toc-number">5.</span> <span class="toc-text">5. 关联Hexo与GitHub Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-多个git账号，该如何设置"><span class="toc-number">6.</span> <span class="toc-text">6. 多个git账号，该如何设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Hexo-的常用操作"><span class="toc-number">7.</span> <span class="toc-text">7. Hexo 的常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-结束语"><span class="toc-number">8.</span> <span class="toc-text">8. 结束语</span></a></li></ol>
-		
-		</div>
-		
-		<p>本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。</p>
+      <p>本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。</p>
 <p>最开始的时候，都是把自己的技术文档、安装攻略，整理到云笔记上，但是后来，云笔记渐渐的不好用了 ，主要原因还是因为他们都开始通过各种方式收费或者限制了，我用过 印象、有道、为知 等等，当我一次次的迁徙我的笔记的时候，就是我一次次的跳入一个坑。当然，我是支持云笔记收费的，只是他们还不到让我买账的程度，因为他们在收费后与之前相比，并没有变的更好用。但是，我知道总有一天，我还是会为他们买单的，当他们可以在Linux系统下运行的时候，期待中吧：）</p>
 <p>目录流程：</p>
 <p>[TOC]</p>
@@ -532,346 +663,221 @@
 <h2 id="8-结束语"><a href="#8-结束语" class="headerlink" title="8. 结束语"></a>8. 结束语</h2><p>深夜仓促总结的,因为之前已经安装过,所以过程,有些,就不方便截图,实在懒得从新装了,但是基本保证没漏洞,少了部分截图,也绝对可以顺利安装.文章里少部分摘抄了别人的总结,基本我全都放出了原文的链接.对于我转载的原作者,而没有署名的,本着以分享的目的,请多多见谅,哈哈.</p>
 <p>最后的最后,我啰里啰嗦的写了一大堆,如果你仔细看完了,并且安装成功了,那么恭喜你加入了这个集体.</p>
 <p>愿大家都能写出有质量的技术博客,分享于众吧!</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
-<div class="article-catetags">
 
-
-</div>
-
-
-
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://yoursite.com/2017/06/13/手把手教你github搭建个人博客/" data-title="BigJeffWang&#39;s Blog 王晔的博客" data-tsina="5227603533" class="share clearfix">
-	  </div>
-	
-	</div>
-
-
-</footer>
-
-   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2017/06/13/Selenium 2 自动化测试实例/" title="">
-  <strong>上一篇：</strong><br/>
-  <span>
-  (no title)</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/"  title="">
- <strong>下一篇：</strong><br/> 
- <span>(no title)
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-搭建-Node-js-环境"><span class="toc-number">1.</span> <span class="toc-text">1. 搭建 Node.js 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-搭建-Git-环境"><span class="toc-number">2.</span> <span class="toc-text">2. 搭建 Git 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitHub-注册和配置"><span class="toc-number">3.</span> <span class="toc-text">3. GitHub 注册和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装配置-Hexo"><span class="toc-number">4.</span> <span class="toc-text">4. 安装配置 Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-关联Hexo与GitHub-Pages"><span class="toc-number">5.</span> <span class="toc-text">5. 关联Hexo与GitHub Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-多个git账号，该如何设置"><span class="toc-number">6.</span> <span class="toc-text">6. 多个git账号，该如何设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Hexo-的常用操作"><span class="toc-number">7.</span> <span class="toc-text">7. Hexo 的常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-结束语"><span class="toc-number">8.</span> <span class="toc-text">8. 结束语</span></a></li></ol>
- 
+    
   </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-<div class="github-card">
-<p class="asidetitle">Github Card</p>
-<div class="github-card" data-github="BigJeffWang" data-theme="medium"></div>
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
+</article>
 
 
-
-  
-
-  
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul class="theme.donation.items.length">
         
-          <li>
-            
-            	<a href="http://www.jianshu.com/u/112e9bff0bca" target="_blank" title="BigJeffWang&#39;s Blog">BigJeffWang&#39;s Blog</a>
-            
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
           </li>
         
-    </ul>
-</div>
-
-  
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5227603533&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m BigJeffWang a rookie. <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/5227603533" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/BigJeffWang" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<a href="mailto:bigjeffwang@163.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
-		
-		<a href="/about" target="_blank" title="BigJeffWang">BigJeffWang</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
         
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/06/13/Selenium 2 自动化测试实例/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2017/06/13/手把手教你github搭建个人博客/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
     }
-  });
-});
-</script>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
-  var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
-  $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
   }
-}); 
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
 </script>
 
-
-
-<!-- Analytics Begin -->
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
-
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  </body>
+</body>
 </html>
