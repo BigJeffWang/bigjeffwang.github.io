@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+    <meta name="keywords" content="BigJeffWang,前端,测试,开发,用户体验,设计,frontend,design,nodejs,JavaScript,Python,Selenium" />
   
 
   <meta name="description" content="本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。 最开始的时候，都是把自己的技术文档、安装攻略，整理到云笔记上，但是后来，云笔记渐渐的不好用了 ，主要原因还是因为他们都开始通过各种方式收费或者限制了，我用过 印象、有道、为知 等等，当我一次次的迁徙我的笔记的时候，就是我一次次的跳入一个坑。当然，我是支持云笔记收费的，只是他">
@@ -234,7 +234,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2017/06/13/手把手教你github搭建个人博客/#disqus_thread"></a>
+          <a href="https://github.com/BigJeffWang/2017/06/13/手把手教你github搭建个人博客/#disqus_thread"></a>
         </span>
       
 
@@ -670,26 +670,6 @@
 
 
    
-  <div class="text-center donation">
-    <div class="inner-donation">
-      <span class="btn-donation">支持一下</span>
-      <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
-        <ul class="theme.donation.items.length">
-        
-          <li class="item">
-            <img src="/images/qr-wechat.png" alt="">
-          </li>
-        
-          <li class="item">
-            <img src="/images/qr-alipay.png" alt="">
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-  </div>
-
 
    
   <div class="box-prev-next clearfix">
@@ -879,5 +859,20 @@
   }
 </script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
