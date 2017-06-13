@@ -11,15 +11,16 @@
     
 
     
-    <meta name="description" content="BigJeffWang&apos;s Blog">
-<meta property="og:type" content="website">
+    <meta name="description" content="Selenium 2 自动化测试实例 更新中… 目录: [TOC] 1. 自动化测试基础1.1 软件测试分类1. 根据项目流程阶段划分测试 单元测试: 单个子程序测试 集成测试: 模块由多个单元集成成子系统再测试 系统测试: 针对整个产品系统的测试 验收测试: 部署软件之前的最后一个测试阶段  2. 白盒测试、黑盒测试、灰盒测试 黑盒：只关心软件的输入数据和输出结果 白盒：产品内部动作和代码逻辑是">
+<meta property="og:type" content="article">
 <meta property="og:title" content="BigJeffWang&#39;s Blog 王晔的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/13/Selenium 2 自动化测试实例/index.html">
 <meta property="og:site_name" content="BigJeffWang&#39;s Blog 王晔的博客">
-<meta property="og:description" content="BigJeffWang&apos;s Blog">
+<meta property="og:description" content="Selenium 2 自动化测试实例 更新中… 目录: [TOC] 1. 自动化测试基础1.1 软件测试分类1. 根据项目流程阶段划分测试 单元测试: 单个子程序测试 集成测试: 模块由多个单元集成成子系统再测试 系统测试: 针对整个产品系统的测试 验收测试: 部署软件之前的最后一个测试阶段  2. 白盒测试、黑盒测试、灰盒测试 黑盒：只关心软件的输入数据和输出结果 白盒：产品内部动作和代码逻辑是">
+<meta property="og:updated_time" content="2017-06-13T07:31:04.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BigJeffWang&#39;s Blog 王晔的博客">
-<meta name="twitter:description" content="BigJeffWang&apos;s Blog">
+<meta name="twitter:description" content="Selenium 2 自动化测试实例 更新中… 目录: [TOC] 1. 自动化测试基础1.1 软件测试分类1. 根据项目流程阶段划分测试 单元测试: 单个子程序测试 集成测试: 模块由多个单元集成成子系统再测试 系统测试: 针对整个产品系统的测试 验收测试: 部署软件之前的最后一个测试阶段  2. 白盒测试、黑盒测试、灰盒测试 黑盒：只关心软件的输入数据和输出结果 白盒：产品内部动作和代码逻辑是">
 
     
     <link rel="alternative" href="/atom.xml" title="BigJeffWang&#39;s Blog 王晔的博客" type="application/atom+xml">
@@ -73,12 +74,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2017/06/13/Selenium 2 自动化测试实例/" title="" itemprop="url"></a>
@@ -92,9 +91,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <p>Selenium 2 自动化测试实例 更新中…</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-自动化测试基础"><span class="toc-number">1.</span> <span class="toc-text">1. 自动化测试基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-软件测试分类"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 软件测试分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-根据项目流程阶段划分测试"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 根据项目流程阶段划分测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-白盒测试、黑盒测试、灰盒测试"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 白盒测试、黑盒测试、灰盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-功能测试和性能测试"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 功能测试和性能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-手工测试与自动化测试"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 手工测试与自动化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-冒烟测试、回归测试、随机测试、探索型测试和安全测试"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 冒烟测试、回归测试、随机测试、探索型测试和安全测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-分层的自动化测试"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 分层的自动化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-什么项目适合做自动化测试"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 什么项目适合做自动化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-市面上常见的自动化测试工具"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 市面上常见的自动化测试工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Selenium工具介绍"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 Selenium工具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-前端技术介绍"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 前端技术介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-前端工具介绍"><span class="toc-number">1.7.</span> <span class="toc-text">1.7 前端工具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-开发语言选择"><span class="toc-number">1.8.</span> <span class="toc-text">1.8 开发语言选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-测试环境搭建"><span class="toc-number">2.</span> <span class="toc-text">2. 测试环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Windows下的环境搭建"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Windows下的环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-安装Python"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 安装Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-安装setuptools与pip"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 安装setuptools与pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-安装Selenium"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 安装Selenium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-ActivePython"><span class="toc-number">2.1.4.</span> <span class="toc-text">2.1.4 ActivePython</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Ubuntu下环境搭建"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Ubuntu下环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-使用IDLE编写Python"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 使用IDLE编写Python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-编写第一个自动化脚本"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 编写第一个自动化脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-安装浏览器驱动"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 安装浏览器驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-不同语言使用WebDriver"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 不同语言使用WebDriver</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Python基础"><span class="toc-number">3.</span> <span class="toc-text">3. Python基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Python哲学"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Python哲学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-输入输出"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 输入输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-分支与循环"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 分支与循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-数组与字典"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 数组与字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-函数、类和方法"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 函数、类和方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-模组、类库、模块"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 模组、类库、模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-WebDriver-API"><span class="toc-number">4.</span> <span class="toc-text">4. WebDriver API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-从定位元素开始"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 从定位元素开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-控制浏览器"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 控制浏览器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-元素控制"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 元素控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-鼠标事件"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 鼠标事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-键盘事件"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 键盘事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-获取验证信息"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 获取验证信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-设置元素等待"><span class="toc-number">4.7.</span> <span class="toc-text">4.7 设置元素等待</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-复选"><span class="toc-number">4.8.</span> <span class="toc-text">4.8 复选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-9-多表单切换"><span class="toc-number">4.9.</span> <span class="toc-text">4.9 多表单切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-10-多窗口切换"><span class="toc-number">4.10.</span> <span class="toc-text">4.10 多窗口切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-11-警告框处理"><span class="toc-number">4.11.</span> <span class="toc-text">4.11 警告框处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-12"><span class="toc-number">4.12.</span> <span class="toc-text">4.12</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-1-send-keys实现上传"><span class="toc-number">4.12.1.</span> <span class="toc-text">4.12.1 send_keys实现上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-2-AutoIt实现上传"><span class="toc-number">4.12.2.</span> <span class="toc-text">4.12.2 AutoIt实现上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-13-下载文件"><span class="toc-number">4.12.3.</span> <span class="toc-text">4.13 下载文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-14-操作Cookie"><span class="toc-number">4.12.4.</span> <span class="toc-text">4.14 操作Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-15-调用JavaScript"><span class="toc-number">4.12.5.</span> <span class="toc-text">4.15 调用JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-16-处理HTML5的视频播放"><span class="toc-number">4.12.6.</span> <span class="toc-text">4.16 处理HTML5的视频播放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-17-窗口截图"><span class="toc-number">4.12.7.</span> <span class="toc-text">4.17 窗口截图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-18-关闭窗口"><span class="toc-number">4.12.8.</span> <span class="toc-text">4.18 关闭窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-19-验证码的处理"><span class="toc-number">4.12.9.</span> <span class="toc-text">4.19 验证码的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-20-WebDriver原理"><span class="toc-number">4.12.10.</span> <span class="toc-text">4.20 WebDriver原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-自动化测试模型"><span class="toc-number">5.</span> <span class="toc-text">5. 自动化测试模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-自动化测试模型介绍"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 自动化测试模型介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-线性测试"><span class="toc-number">5.1.1.</span> <span class="toc-text">5.1.1 线性测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-模块化测试"><span class="toc-number">5.1.2.</span> <span class="toc-text">5.1.2 模块化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-数据驱动测试"><span class="toc-number">5.1.3.</span> <span class="toc-text">5.1.3 数据驱动测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4-关键字驱动"><span class="toc-number">5.1.4.</span> <span class="toc-text">5.1.4 关键字驱动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-selenium-IDE"><span class="toc-number">6.</span> <span class="toc-text">6. selenium IDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-unittest-单元测试框架"><span class="toc-number">7.</span> <span class="toc-text">7. unittest 单元测试框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-自动化测试高级应用"><span class="toc-number">8.</span> <span class="toc-text">8. 自动化测试高级应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Selenium-Grid2"><span class="toc-number">9.</span> <span class="toc-text">9. Selenium Grid2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Python多线程"><span class="toc-number">10.</span> <span class="toc-text">10. Python多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-自动化测试实战"><span class="toc-number">11.</span> <span class="toc-text">11. 自动化测试实战</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-BDD框架指Lettuce入门"><span class="toc-number">12.</span> <span class="toc-text">12. BDD框架指Lettuce入门</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-GitHub托管项目"><span class="toc-number">13.</span> <span class="toc-text">13. GitHub托管项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-持续继承Jenkins入门"><span class="toc-number">14.</span> <span class="toc-text">14. 持续继承Jenkins入门</span></a></li></ol>
+		
+		</div>
+		
+		<p>Selenium 2 自动化测试实例 更新中…</p>
 <p>目录:</p>
 <p>[TOC]</p>
 <h1 id="1-自动化测试基础"><a href="#1-自动化测试基础" class="headerlink" title="1. 自动化测试基础"></a>1. 自动化测试基础</h1><h2 id="1-1-软件测试分类"><a href="#1-1-软件测试分类" class="headerlink" title="1.1 软件测试分类"></a>1.1 软件测试分类</h2><h3 id="1-根据项目流程阶段划分测试"><a href="#1-根据项目流程阶段划分测试" class="headerlink" title="1. 根据项目流程阶段划分测试"></a>1. 根据项目流程阶段划分测试</h3><ol>
@@ -562,14 +568,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="12-BDD框架指Lettuce入门"><a href="#12-BDD框架指Lettuce入门" class="headerlink" title="12. BDD框架指Lettuce入门"></a>12. BDD框架指Lettuce入门</h1><h1 id="13-GitHub托管项目"><a href="#13-GitHub托管项目" class="headerlink" title="13. GitHub托管项目"></a>13. GitHub托管项目</h1><h1 id="14-持续继承Jenkins入门"><a href="#14-持续继承Jenkins入门" class="headerlink" title="14. 持续继承Jenkins入门"></a>14. 持续继承Jenkins入门</h1>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+<h1 id="12-BDD框架指Lettuce入门"><a href="#12-BDD框架指Lettuce入门" class="headerlink" title="12. BDD框架指Lettuce入门"></a>12. BDD框架指Lettuce入门</h1><h1 id="13-GitHub托管项目"><a href="#13-GitHub托管项目" class="headerlink" title="13. GitHub托管项目"></a>13. GitHub托管项目</h1><h1 id="14-持续继承Jenkins入门"><a href="#14-持续继承Jenkins入门" class="headerlink" title="14. 持续继承Jenkins入门"></a>14. 持续继承Jenkins入门</h1>  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -577,663 +578,43 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2017/06/13/Selenium 2 自动化测试实例/" data-title="BigJeffWang&#39;s Blog 王晔的博客" data-tsina="5227603533" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/06/13/手把手教你github搭建个人博客/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="BigJeffWang" target="_blank" itemprop="author">BigJeffWang</a>
-		
-  <p class="article-time">
-    <time datetime="2017-06-13T08:45:43.613Z" itemprop="datePublished"> Published 2017-06-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>本文是 记录了 Ubuntu16.04 下 通过 Hexo + GitHub 搭建的博客的完整记录，希望大家可以耐心阅读下。</p>
-<p>最开始的时候，都是把自己的技术文档、安装攻略，整理到云笔记上，但是后来，云笔记渐渐的不好用了 ，主要原因还是因为他们都开始通过各种方式收费或者限制了，我用过 印象、有道、为知 等等，当我一次次的迁徙我的笔记的时候，就是我一次次的跳入一个坑。当然，我是支持云笔记收费的，只是他们还不到让我买账的程度，因为他们在收费后与之前相比，并没有变的更好用。但是，我知道总有一天，我还是会为他们买单的，当他们可以在Linux系统下运行的时候，期待中吧：）</p>
-<p>目录流程：</p>
-<p>[TOC]</p>
-<h2 id="1-搭建-Node-js-环境"><a href="#1-搭建-Node-js-环境" class="headerlink" title="1. 搭建 Node.js 环境"></a>1. 搭建 Node.js 环境</h2><p>为什么要搭建 Node.js 环境？ - 因为 Hexo 博客系统是基于 Node.js 编写的</p>
-<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境，可以在非浏览器环境下，解释运行 JS 代码。</p>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js官网</a>：下载安装包 v6.10.3LTS(下载最新的即可)<a href="https://nodejs.org/dist/v6.10.3/node-v6.10.3-linux-x64.tar.xz" target="_blank" rel="external">这是我下载的安装包的地址</a></p>
-<p>步骤：</p>
-<p>Windows 安装</p>
-<p>保持默认设置即可，一路Next，安装很快就结束了，然后打开命令提示符win + R，输入</p>
-<ol>
-<li><blockquote>
-<p>node -v</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>npm -v</p>
-</blockquote>
-</li>
-</ol>
-<p>出现版本号则说明 Node.js 环境配置成功，第一步完成！！！</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-7522dbe127fbd1fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Alt text"></p>
-<p>Ubuntu安装</p>
-<p>我是通过浏览器下载到 （/home/wy/下载），你们可以找到相应的位置（如果位置与你们的有出入可以做相应修改）：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-978afc21a56aa177.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ol>
-<li><blockquote>
-<p>tar zxvf ~/下载/node-v6.10.3-linux-x64.tar.xz -C /opt</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>cd /opt/node-v6.10.3-linux-x64/</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>./node -v</p>
-</blockquote>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-6802cc3c09f784fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> </p>
-</li>
-<li><blockquote>
-<p>ln -s /opt/node-v6.10.3-linux-x64/bin/node /usr/local/bin/node</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>ln -s /opt/node-v6.10.3-linux-x64/bin/npm /usr/local/bin/npm</p>
-</blockquote>
-</li>
-</ol>
-<p>意思就是创建软链接，在/usr/local/bin里，就可以全局使用</p>
-<p>还有一种就是shell提示的apt-get方式，我之前就被这种方式坑了。。。强烈不推荐啊</p>
-<p>另一种：</p>
-<ol>
-<li><blockquote>
-<p>sudo apt-get install nodejs</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>sudo apt-get install npm</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>node -v</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>npm -v</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="2-搭建-Git-环境"><a href="#2-搭建-Git-环境" class="headerlink" title="2. 搭建 Git 环境"></a>2. 搭建 Git 环境</h2><p>为什么要搭建 Git 环境？ - 因为需要把本地的网页和文章等提交到 GitHub 上。</p>
-<p>Git 是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
-<p><a href="http://www.runoob.com/git/git-install-setup.html" target="_blank" rel="external">git的安装配置</a></p>
-<p><a href="http://www.jianshu.com/p/dc90b9aac18c" target="_blank" rel="external">Git安装教程</a></p>
-<p><a href="https://git-scm.com/book/zh/v2/GitHub-%E8%B4%A6%E6%88%B7%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE" target="_blank" rel="external">GitHub - 账户的创建和配置</a></p>
-<p>在Ubuntu上安装git</p>
-<ol>
-<li><blockquote>
-<p>sudo apt-get update</p>
-<p>sudo apt-get install git</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –global user.name “your name”</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –global user.email “your email”</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –global push.default simple  # 每次push仅push当前分支</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –global core.autocrlffalse  # 忽略window/unix换行符</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –global gui.encoding utf-8  # 避免乱码</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –global core.quotepath off  # 避免git status显示的中文文件名乱码</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git –version  # 版本</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config–globalmerge.tool vimdiff  # 差异分析工具</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git config –list  # 查看配置信息</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>ssh-keygen -t rsa -C “your email”</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>ssh-add ~/.ssh/id_rsa  # github用的公钥就在~/.ssh/id_rsa.pub</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="3-GitHub-注册和配置"><a href="#3-GitHub-注册和配置" class="headerlink" title="3. GitHub 注册和配置"></a>3. GitHub 注册和配置</h2><p>GitHub 是一个代码托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。</p>
-<p>Github注册：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-53ce8d7ea0817c35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ol>
-<li><blockquote>
-<p>选择 New repository</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>Repository name 必须选择 相应的格式 “yourname.github.io”</p>
-</blockquote>
-<p> 点击绿色按钮 Create repository 创建<br> <img src="http://upload-images.jianshu.io/upload_images/6298250-c42cd1e1fd2e8578.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><blockquote>
-<p>点击 Settings 完成相应配置</p>
-</blockquote>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-310894e2777e8fbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><blockquote>
-<p>选择 Deploy keys 选项,配置ssh秘钥</p>
-</blockquote>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-fca9a9db15b49601.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><blockquote>
-<p>点击 Add deploy key,添加相应秘钥</p>
-</blockquote>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-170e6e0a52af8c97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><blockquote>
-<p>添加内容 ,title 随便写,key 需要在你的本地查看</p>
-</blockquote>
-<p> 打开终端,输入:</p>
-<blockquote>
-<p>vim ~/.ssh/id_rsa.pub</p>
-</blockquote>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-0fabc6342c6e477a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p> 鼠标右键复制所有内容,到 github刚才配置秘钥页面的 key 里</p>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-194d2fa997c505d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p> 完成内容如下,并点击 Add key</p>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-83b0eabdfdd7a84c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><blockquote>
-<p>最后测试:  输入  ssh git@github.com</p>
-</blockquote>
-<p> 如果最后出现,</p>
-<p> ERROR: Hi tekkub! You’ve successfully authenticated, but GitHub does not provide shell access</p>
-<p> Connection to github.com closed.</p>
-<p> 说明配置成功</p>
-</li>
-</ol>
-<h2 id="4-安装配置-Hexo"><a href="#4-安装配置-Hexo" class="headerlink" title="4. 安装配置 Hexo"></a>4. 安装配置 Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p>强烈建议你花20分钟区读一读 Hexo 的官方文档：<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a></p>
-<ol>
-<li><p>如果之前node.js 安装配置正确的话,可以运行如下命令:</p>
-<p> <img src="http://upload-images.jianshu.io/upload_images/6298250-311c09a2eb7466f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p> 当然命令需要变通一下,不能完全按照下边的执行</p>
-</li>
-</ol>
-<pre><code>在Linux终端 输入 cd ~
-
-进入你的Home目录
-</code></pre><ol>
-<li><p>npm install hexo-cli -g   # 这一步是通过必备的node.js安装成功后,既可以用npm安装</p>
-<p> 安装成功后,会装在 /opt/node-v6.10.3-linux-x64/bin 这个目录</p>
-<p> 下边的命令,需要hexo全局使用,这里创建软链接 :</p>
-<p> ln -s /opt/node-v6.10.3-linux-x64/bin/hexo /usr/local/bin/hexo</p>
-<p> 这里完成才可以执行第三部</p>
-</li>
-<li><p>hexo init bigjeffwang.github.io</p>
-<p> 我这里是在 Home目录执行安装初始化 先 cd ~ 进入Home目录,在执行</p>
-</li>
-<li><p>cd bigjeffwang.github.io</p>
-</li>
-<li><p>npm install</p>
-</li>
-<li><p>hexo server</p>
-</li>
-</ol>
-<h2 id="5-关联Hexo与GitHub-Pages"><a href="#5-关联Hexo与GitHub-Pages" class="headerlink" title="5. 关联Hexo与GitHub Pages"></a>5. 关联Hexo与GitHub Pages</h2><p>基本到这里,完成第5部,算是安装完成,因为之前的github的配置,会关联github</p>
-<p>可能需要注意的几点:</p>
-<p>在使用npm 安装 Hexo：在命令行中输入npm install hexo-cli -g</p>
-<p>然后你将会看到下图，可能你会看到一个</p>
-<p>WARN</p>
-<p>，但是不用担心，这不会影响你的正常使用。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-f53c5875bfd8b22e.JPEG&amp;access=215967316?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>查看Hexo的版本hexo version</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-478e58faaa20e65f.JPEG&amp;access=215967316?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>最后在进行hexo相关配置:</p>
-<p>打开 你本地项目里的 vim _config.yml</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-c6f68a03bcfb7a20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>_config.yml配置参考</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-cc524789ea634828.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>需要改一下 你的 标题 author作者 等等,按照你的意愿,下边有许多可以改的地方,请参考hexo的 <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-89677e673fc92f6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>最后在文档的最后,  deploy 需要改一下,一定要注意 文档格式 所有的: 后边都必须有空格!!!</p>
-<p>type 设置 git</p>
-<p>repository 设置 你github上的项目的 克隆地址 这里一定不要用https:// 开头的地址,因为这样还是需要账户密码登录,后期维护麻烦,之前设置github秘钥,也是为了方便这里,用ssh的地址方式 git@github.com:后边接你的名字+/项目地址</p>
-<p>branch 分支就设置master就可以</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-fc73891ea5804372.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>安装一个扩展 这个很有用 如下:</p>
-<p>npm install hexo-deployer-git –save  # 它可以让你代替git, push你的博客项目</p>
-<p>hexo new “hello world” 这样可以创建你的一篇博客 安装扩展后</p>
-<p>hexo g  # 执行这个,就可以编译你的项目,当然这是简写,完整是 hexo generate</p>
-<p>hexo d  # 同样 执行这个,就可以部署你的项目,并推送到github上了</p>
-<p>项目里的source/_post 这个目录,就是你生成和存放文档的目录</p>
-<p>在浏览器中输入 <a href="https://bigjeffwang.github.io" target="_blank" rel="external">https://bigjeffwang.github.io</a> （用户名当然改成你的）看到了 Hexo 与 GitHub Pages 已经成功关联了，哇哇哇哇哇哇，开心死你了，不要忘了回来给我点赞哟 ~</p>
-<p>下边设置,修改hexo主题</p>
-<p>在 _config.yml 里边有一项是  theme:  它后边接的就是你的主题</p>
-<p>这里需要如下步骤:</p>
-<ol>
-<li><p>进入你的博客项目的themes</p>
-<p> cd ~/bigjeffwang.github.io/themes</p>
-</li>
-<li><p>从github上克隆一个 别人的主题  这里提供一下别人的主题链接,以供参考 <a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">hexo主题</a></p>
-<blockquote>
-<p>git clone <a href="https://github.com/wuchong/jacman.git" target="_blank" rel="external">https://github.com/wuchong/jacman.git</a> ./jacman</p>
-<p>cd ./jacman</p>
-<p>git pull</p>
-</blockquote>
-</li>
-</ol>
-<p>jacman 里边 也是有 _config.yml ,里边怎么修改,需要你自己琢磨,大同小异.请参考 <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
-<p>当然,你也可以自己优化,相当于一个简单的web项目,里边也有JS CSS IMG 目录,可以替换相应你喜欢的图片</p>
-<p>最后别忘了,修改你项目里的_config.yml,替换你的主题的文件夹名字</p>
-<p>我这里是 jacman</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-60e163ffa362f0e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="6-多个git账号，该如何设置"><a href="#6-多个git账号，该如何设置" class="headerlink" title="6. 多个git账号，该如何设置"></a>6. 多个git账号，该如何设置</h2><p>这里懒得写,借用一下,别人总结好的 <a href="http://www.linuxidc.com/Linux/2016-05/131079.htm" target="_blank" rel="external">原作者文档</a></p>
-<p>场景：使用github的时候，大家都知道需要给该账号添加一个SSH key才能访问，参考 <a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">具体设置</a>。当然如果你在多台机器使用一个账户，你可以为该账户添加多个SSH key。由于github是使用SSH key的fingerprint来判定你是哪个账户，而不是通过用户名，这样你就可以在设置完之后，在本地直接执行下面的语句，它就会自动使用你的.ssh/id_rsa.pub所对应的账户进行登陆，然后执行相关命令。</p>
-<ol>
-<li><blockquote>
-<p>本地建库</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git init</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git commit -am”first commit’</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>push到github上去</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git remote add origin git@github.com:xxxx/test.git</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>git push origin master</p>
-</blockquote>
-</li>
-</ol>
-<p>但是如果你想在一台机器使用两个github账号（比如私人账号和工作用账号）。这个时候怎么指定push到哪个账号的test仓库上去呢？</p>
-<p>解决方案（假设你已经拥有私有账号且已经OK，现在想使用另一个工作用账号）：</p>
-<ol>
-<li><p>为工作账号生成SSH Key</p>
-<blockquote>
-<p>ssh-keygen -t rsa -C”your-email-address”#存储key的时候，不要覆盖现有的id_rsa，使用一个新的名字，比如id_rsa_work</p>
-</blockquote>
-</li>
-<li><p>把id_rsa_work.pub加到你的work账号上</p>
-</li>
-<li><p>把该key加到ssh agent上。由于不是使用默认的.ssh/id_rsa，所以你需要显示告诉ssh agent你的新key的位置</p>
-<blockquote>
-<p>ssh-add ~/.ssh/id_rsa_work#可以通过ssh-add -l来确认结果</p>
-</blockquote>
-</li>
-<li><p>配置.ssh/config</p>
-<blockquote>
-<p>vi .ssh/config#加上以下内容#default githubHost github.com</p>
-</blockquote>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">HostName github.com</div><div class="line"></div><div class="line">	IdentityFile~/.ssh/id_rsa</div><div class="line"></div><div class="line">	Host github_work</div><div class="line"></div><div class="line">	HostName github.com</div><div class="line"></div><div class="line">	IdentityFile~/.ssh/id_rsa_work</div></pre></td></tr></table></figure>
-<ol>
-<li><p>这样的话，你就可以通过使用github.com别名github_work来明确说你要是使用id_rsa_work的SSH key来连接github，即使用工作账号进行操作。</p>
-<p> 本地建库: </p>
-<blockquote>
-<p>git init</p>
-<p>git commit-am”first commit’#push到github上去$ git remote add origin git@github_work:xxxx/test.git</p>
-<p>git push origin master</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="7-Hexo-的常用操作"><a href="#7-Hexo-的常用操作" class="headerlink" title="7. Hexo 的常用操作"></a>7. Hexo 的常用操作</h2><p><a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">官方文档</a>建议看看</p>
-<p>你可以执行下列命令来创建一篇新文章。</p>
-<blockquote>
-<p>hexo new [文章名]</p>
-</blockquote>
-<p>您可以在命令中指定文章的布局（layout），默认为post，可以通过修改_config.yml中的default_layout参数来指定默认布局。</p>
-<p><a href="https://hexo.io/zh-cn/docs/writing.html#%E5%B8%83%E5%B1%80%EF%BC%88Layout%EF%BC%89" target="_blank" rel="external">布局</a>（Layout）</p>
-<p>Hexo 有三种默认布局：post、page和draft，它们分别对应不同的路径，而您自定义的其他布局和post相同，都将储存到source/_posts文件夹。</p>
-<p>布局路径</p>
-<blockquote>
-<p>postsource/_posts</p>
-<p>pagesource</p>
-<p>draftsource/_drafts</p>
-</blockquote>
-<p>不要处理我的文章</p>
-<p>如果你不想你的文章被处理，你可以将 Front-Matter 中的layout:设为false。</p>
-<p><a href="https://hexo.io/zh-cn/docs/writing.html#%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0" target="_blank" rel="external">文件名称</a></p>
-<p>Hexo 默认以标题做为文件名称，但您可编辑new_post_name参数来改变默认的文件名称，举例来说，设为:year-:month-:day-:title.md可让您更方便的通过日期来管理文章。</p>
-<p>变量描述</p>
-<p>:title标题（小写，空格将会被替换为短杠）</p>
-<p>:year建立的年份，比如，2015</p>
-<p>:month建立的月份（有前导零），比如，04</p>
-<p>:i_month建立的月份（无前导零），比如，4</p>
-<p>:day建立的日期（有前导零），比如，07</p>
-<p>:i_day建立的日期（无前导零），比如，7</p>
-<p><a href="https://hexo.io/zh-cn/docs/writing.html#%E8%8D%89%E7%A8%BF" target="_blank" rel="external">草稿</a></p>
-<p>刚刚提到了 Hexo 的一种特殊布局：draft，这种布局在建立时会被保存到source/_drafts文件夹，您可通过publish命令将草稿移动到source/_posts文件夹，该命令的使用方式与new十分类似，您也可在命令中指定layout来指定布局。</p>
-<p>$ hexo publish [layout]</p>
-<p>草稿默认不会显示在页面中，您可在执行时加上–draft参数，或是把render_drafts参数设为true来预览草稿。</p>
-<p><a href="https://hexo.io/zh-cn/docs/writing.html#%E6%A8%A1%E7%89%88%EF%BC%88Scaffold%EF%BC%89" target="_blank" rel="external">模版（Scaffold）</a></p>
-<p>在新建文章时，Hexo 会根据scaffolds文件夹内相对应的文件来建立文件，例如：</p>
-<p>$ hexo new photo”My Gallery”</p>
-<p>在执行这行指令时，Hexo 会尝试在scaffolds文件夹中寻找photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p>
-<p>变量描述</p>
-<p>layout布局</p>
-<p>title标题</p>
-<p>date文件建立日期</p>
-<p>Markdown 11种基本语法</p>
-<p>引用自<a href="http://www.cnblogs.com/hnrainll/p/3514637.html" target="_blank" rel="external">http://www.cnblogs.com/hnrainll/p/3514637.html</a></p>
-<ol>
-<li>标题设置（让字体变大，和word的标题意思一样）</li>
-</ol>
-<p>在Markdown当中设置标题，有两种方式：</p>
-<p>第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。</p>
-<p>第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）</p>
-<ol>
-<li>块注释（blockquote）</li>
-</ol>
-<p>通过在文字开头添加“&gt;”表示块注释。（当&gt;和文字之间添加五个blank时，块注释的文字会有变化。）</p>
-<ol>
-<li>斜体</li>
-</ol>
-<p>将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来</p>
-<ol>
-<li>粗体</li>
-</ol>
-<p>将需要设置为斜体的文字两端使用2个“*”或者“_”夹起来</p>
-<ol>
-<li>无序列表</li>
-</ol>
-<p>在文字开头添加(<em>,+, and-)实现无序列表。但是要注意在(</em>,+, and-)和文字之间需要添加空格。（建议：一个文档中只是用一种无序列表的表示方式）</p>
-<ol>
-<li>有序列表</li>
-</ol>
-<p>使用数字后面跟上句号。（还要有空格）</p>
-<ol>
-<li>链接（Links）</li>
-</ol>
-<p>Markdown中有两种方式，实现链接，分别为内联方式和引用方式。</p>
-<p>内联方式：This is an <a href="http://example.com/" target="_blank" rel="external">example link</a>.</p>
-<p>引用方式：</p>
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from <a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
-<ol>
-<li>图片（Images）</li>
-</ol>
-<p>图片的处理方式和链接的处理方式，非常的类似。</p>
-<p>内联方式：<img src="/path/to/img.jpg" alt="alt text" title="Title"></p>
-<p>引用方式：</p>
-<p><img src="/path/to/img.jpg" alt="alt text" title="Title"></p>
-<ol>
-<li>代码（HTML中所谓的Code）</li>
-</ol>
-<p>实现方式有两种：</p>
-<p>第一种：简单文字出现一个代码框。使用`</p>
-<p><code>。（</code>不是单引号而是左上角的ESC下面~中的`）</p>
-<p>第二种：大片文字需要实现代码框。使用Tab和四个空格。</p>
-<ol>
-<li>脚注（footnote）</li>
-</ol>
-<p>实现方式如下：</p>
-<p>hello<a href="hi">^hello</a></p>
-<ol>
-<li>下划线</li>
-</ol>
-<p>在空白行下方添加三条“-”横线。（前面讲过在文字下方添加“-”，实现的2级标题）</p>
-<h2 id="8-结束语"><a href="#8-结束语" class="headerlink" title="8. 结束语"></a>8. 结束语</h2><p>深夜仓促总结的,因为之前已经安装过,所以过程,有些,就不方便截图,实在懒得从新装了,但是基本保证没漏洞,少了部分截图,也绝对可以顺利安装.文章里少部分摘抄了别人的总结,基本我全都放出了原文的链接.对于我转载的原作者,而没有署名的,本着以分享的目的,请多多见谅,哈哈.</p>
-<p>最后的最后,我啰里啰嗦的写了一大堆,如果你仔细看完了,并且安装成功了,那么恭喜你加入了这个集体.</p>
-<p>愿大家都能写出有质量的技术博客,分享于众吧!</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/06/13/手把手教你github搭建个人博客/"  title="">
+ <strong>下一篇：</strong><br/> 
+ <span>(no title)
+</span>
+</a>
 </div>
 
-</footer>
+</nav>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="BigJeffWang" target="_blank" itemprop="author">BigJeffWang</a>
-		
-  <p class="article-time">
-    <time datetime="2017-06-13T08:45:37.552Z" itemprop="datePublished"> Published 2017-06-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1>目录:</h1>
-
-<p>[TOC]</p>
-<h1 id="1-安装sublime-text-3"><a href="#1-安装sublime-text-3" class="headerlink" title="1. 安装sublime text 3"></a>1. 安装sublime text 3</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><h3 id="1-1-安装过程非常简单-在terminal中输入："><a href="#1-1-安装过程非常简单-在terminal中输入：" class="headerlink" title="1.1 安装过程非常简单,在terminal中输入："></a>1.1 安装过程非常简单,在terminal中输入：</h3><blockquote>
-<ol>
-<li>sudo add-apt-repository ppa:webupd8team/sublime-text-3 #添加sublime text 3的仓库</li>
-<li>sudo apt-get update #更新软件库</li>
-<li>sudo apt-get install sublime-text-installer #安装Sublime Text 3</li>
-</ol>
-</blockquote>
-<h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><p>在terminal中输入：</p>
-<blockquote>
-<p>subl</p>
-</blockquote>
-<h3 id="1-3-卸载"><a href="#1-3-卸载" class="headerlink" title="1.3 卸载"></a>1.3 卸载</h3><blockquote>
-<p>sudo apt-get remove sublime-text-installer</p>
-</blockquote>
-<h2 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件</h2><h3 id="2-1-安装-Package-Control-插件管理器"><a href="#2-1-安装-Package-Control-插件管理器" class="headerlink" title="2.1 安装 Package Control 插件管理器"></a>2.1 安装 Package Control 插件管理器</h3><ol>
-<li><p>从 Sublime Text 3 官方获取用于安装的代码。(<a href="https://packagecontrol.io/installation#st3" target="_blank" rel="external">地址请点击这里</a>)<br>1.1 或者从这里粘贴</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;df21e130d211cfc94d9b0905775a7c0f&apos; + &apos;1e3d39e33b79698005270310898eea76&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
-</li>
-<li><p>在sublime text 3的窗口上方,依次点击 View &gt; Show Console 打开的控制台<br>2.1 <img src="http://upload-images.jianshu.io/upload_images/6298250-c41275ef170235a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>2.2 <img src="http://upload-images.jianshu.io/upload_images/6298250-19b2b5daa1725ae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-</li>
-<li>把刚才从官网粘贴的代码,复制到控制台的输入框里,并回车</li>
-<li>其他一些相关命令如下：<br>List Packages 显示所有已安装的插件<br>Remove Packages 移除一个指定的插件<br>Upgrade Package 更新一个指定的插件<br>Upgrade/Overwrite All Packages 更新所有已安装的插件</li>
-</ol>
-<h3 id="2-2-安装anaconda插件"><a href="#2-2-安装anaconda插件" class="headerlink" title="2.2 安装anaconda插件"></a>2.2 安装anaconda插件</h3><p>####2.2.1 介绍<br>Anaconda 是一个终极 <a href="http://lib.csdn.net/base/python" target="_blank" rel="external">Python</a> 插件。它为 ST3 增添了多项 IDE 类似的功能，例如：</p>
-<ul>
-<li>Autocompletion 自动完成，该选项默认开启，同时提供多种配置选项。</li>
-<li>Code linting 使用支持 pep8 标准的 PyLint 或者 PyFlakes。因为我个人使用的是另外的 linting 工具，所以我会在 Anaconda 的配置文件 Anaconda.sublime-settings 中将 linting 完全禁用。操作如下: Sublime &gt; Preferences &gt; Package Settings &gt; Anaconda &gt; Settings – User： {“anaconda_linting”: false}</li>
-<li>McCabe code complexity checker 让你可以在特定的文件中使用 McCabe complexity checker. 如果你对软件复杂度检查工具不太熟悉的话，请务必先浏览上边的链接。</li>
-<li>Goto Definitions 能够在你的整个工程中查找并且显示任意一个变量，函数，或者类的定义。</li>
-<li>Find Usage 能够快速的查找某个变量，函数或者类在某个特定文件中的什么地方被使用了。</li>
-<li>Show Documentation： 能够显示一个函数或者类的说明性字符串(当然，是在定义了字符串的情况下)</li>
-</ul>
-<p>####2.2.2 anaconda安装<br>快捷键 cmd+shift+P 打开 Package Control 来安装其他的插件了。输入 install 然后你就能看见屏幕上出现了 Package Control: Install Package，点击回车然后搜索你想要的插件</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-a483d49c60a69ad2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>点击Anaconda安装,当然我已经装过了,所以列表里,没有.</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-bcb2465246401a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>####2.2.3 配置</p>
-<ol>
-<li>打开终端输入<blockquote>
-<p>whereis python</p>
-</blockquote>
-</li>
-<li>选择Preferences-Package Settings-Anacoda-Settings-Default选项，搜寻“python_interpreter” ， 并将“python_interpreter”：”Python” 改为“python_interpreter”：”/usr/bin/python2.7” (这里根据第一步显示的结果)<br>2.1 如图:<img src="http://upload-images.jianshu.io/upload_images/6298250-67d8e5f2052b1b4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
-<li><p>选择Preferences-Package Settings-Anacoda-Settings-Users选项，键入以下json数据。保存，重启ST3即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">    &quot;python_interpreter&quot;: &quot;/usr/bin/python2.7&quot;,</div><div class="line">    &quot;suppress_word_completions&quot;: true,</div><div class="line">    &quot;suppress_explicit_completions&quot;: true,</div><div class="line">    &quot;complete_parameters&quot;: true,</div><div class="line">    &quot;anaconda_linting&quot;:false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>测试,接下来，就会发现，ST3编写python代码时会有提示功能。 </p>
-</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/6298250-d8f6faf5886b60ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="2-3-安装Markdown用到的插件和编译器中文汉化插件"><a href="#2-3-安装Markdown用到的插件和编译器中文汉化插件" class="headerlink" title="2.3 安装Markdown用到的插件和编译器中文汉化插件"></a>2.3 安装Markdown用到的插件和编译器中文汉化插件</h3><p><a href="http://www.jianshu.com/p/aa30cc25c91b" target="_blank" rel="external">这里有一篇,写的很详细,可以点击看看</a></p>
-<ul>
-<li><strong>打开sublime txt3&gt;Ctrl+shift+P &gt; install Package &gt; 复制以下插件名即可安装</strong>:</li>
-<li><strong>Chinese</strong> : <strong>汉化!</strong>喜欢用英文的,建议不装!</li>
-<li><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkDown Editing</a> : 支持Markdown语法高亮；支持Github Favored Markdown语法；自带3个主题。</li>
-<li><a href="https://github.com/revolunet/sublimetext-markdown-preview" target="_blank" rel="external">MarkdownPreview</a>：按CTRL + B 生成网页HTML；在最前面添加[TOC]自动生成目录；</li>
-<li><a href="http://theo.im/OmniMarkupPreviewer/" target="_blank" rel="external">OmniMarkupPreviwer</a>：<strong>实时</strong>在浏览器中预，而MarkdownPreview是需要手动生成的和F5的。览如果双屏的话，应该具有不错的体验。快捷键如下：<ul>
-<li>Ctrl+Alt+O: Preview Markup in Browser. 这个非常有用!!!</li>
-<li>Ctrl+Alt+X: Export Markup as HTML.</li>
-<li>Ctrl+Alt+C: Copy Markup as HTML.</li>
-</ul>
-</li>
-<li><a href="https://github.com/naokazuterada/MarkdownTOC" target="_blank" rel="external">Markdown TOC</a>：编辑MD文件的时候可以查看自动生成，并且可以控制生产目录的层次，不过不会自动跳转。编辑的时候可以看看，如果需要生成的HTML具有超链接跳转的功能，还是用MarkdownPreview吧。<br><strong>Sublime Text 系列</strong><br><a href="http://www.jianshu.com/p/d1b9a64e2e37" target="_blank" rel="external">Sublime Text：学习资源篇</a><br><a href="http://www.jianshu.com/p/5905f927d01b" target="_blank" rel="external">Sublime插件：增强篇</a><br><a href="http://www.jianshu.com/p/aa30cc25c91b" target="_blank" rel="external">Sublime插件：Markdown篇</a><br><a href="http://www.jianshu.com/p/595975a2a5f3" target="_blank" rel="external">Sublime插件：C语言篇</a><br><a href="http://www.jianshu.com/p/13fedee165f1" target="_blank" rel="external">Sublime插件：主题篇</a><br><a href="http://www.jianshu.com/p/3a8555c273d8" target="_blank" rel="external">Sublime插件：Git篇</a><br><a href="http://www.jianshu.com/p/c75d21d2e967" target="_blank" rel="external">Sublime 小技巧：文本自动换行显示？</a></li>
-</ul>
-<h1 id="2-相对的完美解决汉化问题"><a href="#2-相对的完美解决汉化问题" class="headerlink" title="2. 相对的完美解决汉化问题"></a>2. 相对的完美解决汉化问题</h1><p><em>本经验目前在Ubuntu14.04环境下，已有搜狗输入法 for Linux和Sublime Text 3的情况下安装成功。</em><br>步骤:</p>
-<ol>
-<li>安装 C/C++ 的编译环境和 gtk libgtk2.0-dev<blockquote>
-<ol>
-<li>sudo apt-get install build-essential</li>
-<li>sudo apt-get install libgtk2.0-dev</li>
-</ol>
-</blockquote>
-</li>
-<li><p>保存下面的代码到文件sublime_imfix.c(位于~目录)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#include &lt;gtk/gtkimcontext.h&gt;</div><div class="line">void gtk_im_context_set_client_window (GtkIMContext *context,</div><div class="line">         GdkWindow    *window)</div><div class="line">&#123;</div><div class="line"> GtkIMContextClass *klass;</div><div class="line"> g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line"> klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line"> if (klass-&gt;set_client_window)</div><div class="line">   klass-&gt;set_client_window (context, window);</div><div class="line"> g_object_set_data(G_OBJECT(context),&quot;window&quot;,window);</div><div class="line"> if(!GDK_IS_WINDOW (window))</div><div class="line">   return;</div><div class="line"> int width = gdk_window_get_width(window);</div><div class="line"> int height = gdk_window_get_height(window);</div><div class="line"> if(width != 0 &amp;&amp; height !=0)</div><div class="line">   gtk_im_context_focus_in(context);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>将上一步的代码编译成共享库libsublime-imfix.so，命令</p>
-<blockquote>
-<ol>
-<li>cd ~</li>
-<li>gcc -shared -o libsublime-imfix.so sublime_imfix.c  <code>pkg-config --libs --cflags gtk+-2.0</code> -fPIC</li>
-</ol>
-</blockquote>
-</li>
-<li>然后将libsublime-imfix.so拷贝到sublime_text所在文件夹<blockquote>
-<p>sudo mv libsublime-imfix.so /opt/sublime_text/</p>
-</blockquote>
-</li>
-<li><p>修改文件/usr/bin/subl的内容</p>
-<blockquote>
-<ol>
-<li>sudo gedit /usr/bin/subl</li>
-<li>将源文件修改<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\#!/bin/sh </div><div class="line">exec /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<p>修改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">\#!/bin/sh</div><div class="line">export LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so</div><div class="line">exec /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>此时，在命令中执行 subl 将可以使用搜狗for linux的中文输入</p>
-</li>
-<li>为了使用鼠标右键打开文件时能够使用中文输入，还需要修改文件sublime_text.desktop的内容。<ol>
-<li><blockquote>
-<p>sudo gedit /usr/share/applications/sublime_text.desktop<br>将[Desktop Entry]中的字符串<br>Exec=/opt/sublime_text/sublime_text %F<br>修改为<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec  /opt/sublime_text/sublime_text %F”</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>将[Desktop Action Window]中的字符串<br>Exec=/opt/sublime_text/sublime_text -n<br>修改为<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec   /opt/sublime_text/sublime_text -n”</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>将[Desktop Action Document]中的字符串<br>Exec=/opt/sublime_text/sublime_text –command new_file<br>修改为<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec   /opt/sublime_text/sublime_text –command new_file”</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>注意：<br>修改时请注意双引号””,否则会导致不能打开带有空格文件名的文件。<br>此处仅修改了/usr/share/applications/sublime-text.desktop，但可以正常使用了。<br>opt/sublime_text/目录下的sublime-text.desktop可以修改，也可不修改。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<p><strong>经过以上步骤我们能在Sublime中输入中文了。如果感觉对你有帮助的话,请给我点个赞或分享给他人</strong></p>
-<p>分销几个别人总结的Markdown的文章:</p>
-<ul>
-<li><a href="(http://blog.leanote.com/post/freewalk/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C#title-5)">Markdown 语法手册 （完整整理版）</a></li>
-<li><a href="(http://www.appinn.com/markdown/#header)">Markdown 语法说明 (简体中文版)</a></li>
-<li></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
 	
-</div>
 
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-自动化测试基础"><span class="toc-number">1.</span> <span class="toc-text">1. 自动化测试基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-软件测试分类"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 软件测试分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-根据项目流程阶段划分测试"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 根据项目流程阶段划分测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-白盒测试、黑盒测试、灰盒测试"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 白盒测试、黑盒测试、灰盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-功能测试和性能测试"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 功能测试和性能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-手工测试与自动化测试"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 手工测试与自动化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-冒烟测试、回归测试、随机测试、探索型测试和安全测试"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 冒烟测试、回归测试、随机测试、探索型测试和安全测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-分层的自动化测试"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 分层的自动化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-什么项目适合做自动化测试"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 什么项目适合做自动化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-市面上常见的自动化测试工具"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 市面上常见的自动化测试工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Selenium工具介绍"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 Selenium工具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-前端技术介绍"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 前端技术介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-前端工具介绍"><span class="toc-number">1.7.</span> <span class="toc-text">1.7 前端工具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-开发语言选择"><span class="toc-number">1.8.</span> <span class="toc-text">1.8 开发语言选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-测试环境搭建"><span class="toc-number">2.</span> <span class="toc-text">2. 测试环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Windows下的环境搭建"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Windows下的环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-安装Python"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 安装Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-安装setuptools与pip"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 安装setuptools与pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-安装Selenium"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 安装Selenium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-ActivePython"><span class="toc-number">2.1.4.</span> <span class="toc-text">2.1.4 ActivePython</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Ubuntu下环境搭建"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Ubuntu下环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-使用IDLE编写Python"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 使用IDLE编写Python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-编写第一个自动化脚本"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 编写第一个自动化脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-安装浏览器驱动"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 安装浏览器驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-不同语言使用WebDriver"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 不同语言使用WebDriver</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Python基础"><span class="toc-number">3.</span> <span class="toc-text">3. Python基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Python哲学"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Python哲学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-输入输出"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 输入输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-分支与循环"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 分支与循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-数组与字典"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 数组与字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-函数、类和方法"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 函数、类和方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-模组、类库、模块"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 模组、类库、模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-WebDriver-API"><span class="toc-number">4.</span> <span class="toc-text">4. WebDriver API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-从定位元素开始"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 从定位元素开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-控制浏览器"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 控制浏览器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-元素控制"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 元素控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-鼠标事件"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 鼠标事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-键盘事件"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 键盘事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-获取验证信息"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 获取验证信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-设置元素等待"><span class="toc-number">4.7.</span> <span class="toc-text">4.7 设置元素等待</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-复选"><span class="toc-number">4.8.</span> <span class="toc-text">4.8 复选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-9-多表单切换"><span class="toc-number">4.9.</span> <span class="toc-text">4.9 多表单切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-10-多窗口切换"><span class="toc-number">4.10.</span> <span class="toc-text">4.10 多窗口切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-11-警告框处理"><span class="toc-number">4.11.</span> <span class="toc-text">4.11 警告框处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-12"><span class="toc-number">4.12.</span> <span class="toc-text">4.12</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-1-send-keys实现上传"><span class="toc-number">4.12.1.</span> <span class="toc-text">4.12.1 send_keys实现上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-2-AutoIt实现上传"><span class="toc-number">4.12.2.</span> <span class="toc-text">4.12.2 AutoIt实现上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-13-下载文件"><span class="toc-number">4.12.3.</span> <span class="toc-text">4.13 下载文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-14-操作Cookie"><span class="toc-number">4.12.4.</span> <span class="toc-text">4.14 操作Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-15-调用JavaScript"><span class="toc-number">4.12.5.</span> <span class="toc-text">4.15 调用JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-16-处理HTML5的视频播放"><span class="toc-number">4.12.6.</span> <span class="toc-text">4.16 处理HTML5的视频播放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-17-窗口截图"><span class="toc-number">4.12.7.</span> <span class="toc-text">4.17 窗口截图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-18-关闭窗口"><span class="toc-number">4.12.8.</span> <span class="toc-text">4.18 关闭窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-19-验证码的处理"><span class="toc-number">4.12.9.</span> <span class="toc-text">4.19 验证码的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-20-WebDriver原理"><span class="toc-number">4.12.10.</span> <span class="toc-text">4.20 WebDriver原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-自动化测试模型"><span class="toc-number">5.</span> <span class="toc-text">5. 自动化测试模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-自动化测试模型介绍"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 自动化测试模型介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-线性测试"><span class="toc-number">5.1.1.</span> <span class="toc-text">5.1.1 线性测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-模块化测试"><span class="toc-number">5.1.2.</span> <span class="toc-text">5.1.2 模块化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-数据驱动测试"><span class="toc-number">5.1.3.</span> <span class="toc-text">5.1.3 数据驱动测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4-关键字驱动"><span class="toc-number">5.1.4.</span> <span class="toc-text">5.1.4 关键字驱动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-selenium-IDE"><span class="toc-number">6.</span> <span class="toc-text">6. selenium IDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-unittest-单元测试框架"><span class="toc-number">7.</span> <span class="toc-text">7. unittest 单元测试框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-自动化测试高级应用"><span class="toc-number">8.</span> <span class="toc-text">8. 自动化测试高级应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Selenium-Grid2"><span class="toc-number">9.</span> <span class="toc-text">9. Selenium Grid2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Python多线程"><span class="toc-number">10.</span> <span class="toc-text">10. Python多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-自动化测试实战"><span class="toc-number">11.</span> <span class="toc-text">11. 自动化测试实战</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-BDD框架指Lettuce入门"><span class="toc-number">12.</span> <span class="toc-text">12. BDD框架指Lettuce入门</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-GitHub托管项目"><span class="toc-number">13.</span> <span class="toc-text">13. GitHub托管项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-持续继承Jenkins入门"><span class="toc-number">14.</span> <span class="toc-text">14. 持续继承Jenkins入门</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -1368,12 +749,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -1444,4 +902,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
