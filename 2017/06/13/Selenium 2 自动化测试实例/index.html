@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Selenium 2 自动化测试实例 | BigJeffWang&#39;s Blog 王晔的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="BigJeffWang,前端,测试,开发,用户体验,设计,frontend,design,nodejs,JavaScript,Python,Selenium" />
+  
+
+  <meta name="description" content="Selenium 2 自动化测试实例 更新中… 目录: [TOC] 1. 自动化测试基础1.1 软件测试分类1. 根据项目流程阶段划分测试 单元测试: 单个子程序测试 集成测试: 模块由多个单元集成成子系统再测试 系统测试: 针对整个产品系统的测试 验收测试: 部署软件之前的最后一个测试阶段  2. 白盒测试、黑盒测试、灰盒测试 黑盒：只关心软件的输入数据和输出结果 白盒：产品内部动作和代码逻辑是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Selenium 2 自动化测试实例">
+<meta property="og:url" content="http://yoursite.com/2017/06/13/Selenium 2 自动化测试实例/index.html">
+<meta property="og:site_name" content="BigJeffWang&#39;s Blog 王晔的博客">
+<meta property="og:description" content="Selenium 2 自动化测试实例 更新中… 目录: [TOC] 1. 自动化测试基础1.1 软件测试分类1. 根据项目流程阶段划分测试 单元测试: 单个子程序测试 集成测试: 模块由多个单元集成成子系统再测试 系统测试: 针对整个产品系统的测试 验收测试: 部署软件之前的最后一个测试阶段  2. 白盒测试、黑盒测试、灰盒测试 黑盒：只关心软件的输入数据和输出结果 白盒：产品内部动作和代码逻辑是">
+<meta property="og:updated_time" content="2017-06-13T10:17:37.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Selenium 2 自动化测试实例">
+<meta name="twitter:description" content="Selenium 2 自动化测试实例 更新中… 目录: [TOC] 1. 自动化测试基础1.1 软件测试分类1. 根据项目流程阶段划分测试 单元测试: 单个子程序测试 集成测试: 模块由多个单元集成成子系统再测试 系统测试: 针对整个产品系统的测试 验收测试: 部署软件之前的最后一个测试阶段  2. 白盒测试、黑盒测试、灰盒测试 黑盒：只关心软件的输入数据和输出结果 白盒：产品内部动作和代码逻辑是">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-自动化测试基础"><span class="toc-text">1. 自动化测试基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-软件测试分类"><span class="toc-text">1.1 软件测试分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-根据项目流程阶段划分测试"><span class="toc-text">1. 根据项目流程阶段划分测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-白盒测试、黑盒测试、灰盒测试"><span class="toc-text">2. 白盒测试、黑盒测试、灰盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-功能测试和性能测试"><span class="toc-text">3. 功能测试和性能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-手工测试与自动化测试"><span class="toc-text">4. 手工测试与自动化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-冒烟测试、回归测试、随机测试、探索型测试和安全测试"><span class="toc-text">5. 冒烟测试、回归测试、随机测试、探索型测试和安全测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-分层的自动化测试"><span class="toc-text">1.2 分层的自动化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-什么项目适合做自动化测试"><span class="toc-text">1.3 什么项目适合做自动化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-市面上常见的自动化测试工具"><span class="toc-text">1.4 市面上常见的自动化测试工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Selenium工具介绍"><span class="toc-text">1.5 Selenium工具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-前端技术介绍"><span class="toc-text">1.6 前端技术介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-前端工具介绍"><span class="toc-text">1.7 前端工具介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-开发语言选择"><span class="toc-text">1.8 开发语言选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-测试环境搭建"><span class="toc-text">2. 测试环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Windows下的环境搭建"><span class="toc-text">2.1 Windows下的环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-安装Python"><span class="toc-text">2.1.1 安装Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-安装setuptools与pip"><span class="toc-text">2.1.2 安装setuptools与pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-安装Selenium"><span class="toc-text">2.1.3 安装Selenium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-ActivePython"><span class="toc-text">2.1.4 ActivePython</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Ubuntu下环境搭建"><span class="toc-text">2.2 Ubuntu下环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-使用IDLE编写Python"><span class="toc-text">2.3 使用IDLE编写Python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-编写第一个自动化脚本"><span class="toc-text">2.4 编写第一个自动化脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-安装浏览器驱动"><span class="toc-text">2.5 安装浏览器驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-不同语言使用WebDriver"><span class="toc-text">2.6 不同语言使用WebDriver</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Python基础"><span class="toc-text">3. Python基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Python哲学"><span class="toc-text">3.1 Python哲学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-输入输出"><span class="toc-text">3.2 输入输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-分支与循环"><span class="toc-text">3.3 分支与循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-数组与字典"><span class="toc-text">3.4 数组与字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-函数、类和方法"><span class="toc-text">3.5 函数、类和方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-模组、类库、模块"><span class="toc-text">3.6 模组、类库、模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-WebDriver-API"><span class="toc-text">4. WebDriver API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-从定位元素开始"><span class="toc-text">4.1 从定位元素开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-控制浏览器"><span class="toc-text">4.2 控制浏览器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-元素控制"><span class="toc-text">4.3 元素控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-鼠标事件"><span class="toc-text">4.4 鼠标事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-键盘事件"><span class="toc-text">4.5 键盘事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-获取验证信息"><span class="toc-text">4.6 获取验证信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-设置元素等待"><span class="toc-text">4.7 设置元素等待</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-复选"><span class="toc-text">4.8 复选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-9-多表单切换"><span class="toc-text">4.9 多表单切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-10-多窗口切换"><span class="toc-text">4.10 多窗口切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-11-警告框处理"><span class="toc-text">4.11 警告框处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-12"><span class="toc-text">4.12</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-1-send-keys实现上传"><span class="toc-text">4.12.1 send_keys实现上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-2-AutoIt实现上传"><span class="toc-text">4.12.2 AutoIt实现上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-13-下载文件"><span class="toc-text">4.13 下载文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-14-操作Cookie"><span class="toc-text">4.14 操作Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-15-调用JavaScript"><span class="toc-text">4.15 调用JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-16-处理HTML5的视频播放"><span class="toc-text">4.16 处理HTML5的视频播放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-17-窗口截图"><span class="toc-text">4.17 窗口截图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-18-关闭窗口"><span class="toc-text">4.18 关闭窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-19-验证码的处理"><span class="toc-text">4.19 验证码的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-20-WebDriver原理"><span class="toc-text">4.20 WebDriver原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-自动化测试模型"><span class="toc-text">5. 自动化测试模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-自动化测试模型介绍"><span class="toc-text">5.1 自动化测试模型介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-线性测试"><span class="toc-text">5.1.1 线性测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-模块化测试"><span class="toc-text">5.1.2 模块化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-数据驱动测试"><span class="toc-text">5.1.3 数据驱动测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4-关键字驱动"><span class="toc-text">5.1.4 关键字驱动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-selenium-IDE"><span class="toc-text">6. selenium IDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-unittest-单元测试框架"><span class="toc-text">7. unittest 单元测试框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-自动化测试高级应用"><span class="toc-text">8. 自动化测试高级应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Selenium-Grid2"><span class="toc-text">9. Selenium Grid2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Python多线程"><span class="toc-text">10. Python多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-自动化测试实战"><span class="toc-text">11. 自动化测试实战</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-BDD框架指Lettuce入门"><span class="toc-text">12. BDD框架指Lettuce入门</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-GitHub托管项目"><span class="toc-text">13. GitHub托管项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-持续继承Jenkins入门"><span class="toc-text">14. 持续继承Jenkins入门</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Selenium 2 自动化测试实例" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Selenium 2 自动化测试实例</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.06.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>BigJeffWang</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://github.com/BigJeffWang/2017/06/13/Selenium 2 自动化测试实例/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>Selenium 2 自动化测试实例 更新中…</p>
+<p>目录:</p>
+<p>[TOC]</p>
+<h1 id="1-自动化测试基础"><a href="#1-自动化测试基础" class="headerlink" title="1. 自动化测试基础"></a>1. 自动化测试基础</h1><h2 id="1-1-软件测试分类"><a href="#1-1-软件测试分类" class="headerlink" title="1.1 软件测试分类"></a>1.1 软件测试分类</h2><h3 id="1-根据项目流程阶段划分测试"><a href="#1-根据项目流程阶段划分测试" class="headerlink" title="1. 根据项目流程阶段划分测试"></a>1. 根据项目流程阶段划分测试</h3><ol>
+<li>单元测试: 单个子程序测试</li>
+<li>集成测试: 模块由多个单元集成成子系统再测试</li>
+<li>系统测试: 针对整个产品系统的测试</li>
+<li>验收测试: 部署软件之前的最后一个测试阶段</li>
+</ol>
+<h3 id="2-白盒测试、黑盒测试、灰盒测试"><a href="#2-白盒测试、黑盒测试、灰盒测试" class="headerlink" title="2. 白盒测试、黑盒测试、灰盒测试"></a>2. 白盒测试、黑盒测试、灰盒测试</h3><ol>
+<li>黑盒：只关心软件的输入数据和输出结果</li>
+<li>白盒：产品内部动作和代码逻辑是否按照设计规格进行</li>
+<li>灰盒：介于黑盒和白盒之间，既关注输入输出的正确性，同时也关注内部的表现</li>
+</ol>
+<h3 id="3-功能测试和性能测试"><a href="#3-功能测试和性能测试" class="headerlink" title="3. 功能测试和性能测试"></a>3. 功能测试和性能测试</h3><ol>
+<li>功能测试：逻辑功能测试、界面测试、易用性测试、安装测试、兼容性测试等等</li>
+<li>性能测试：<ul>
+<li>时间性能：具体响应时间</li>
+<li>空间性能：消耗占用系统资源，例如硬件资源，CPU、内存、网络带宽消耗等</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-手工测试与自动化测试"><a href="#4-手工测试与自动化测试" class="headerlink" title="4. 手工测试与自动化测试"></a>4. 手工测试与自动化测试</h3><ol>
+<li>手工测试：由测试人员一个一个地去执行测试用例</li>
+<li>自动化测试：把人为驱动的测试行为转化为机器执行的一种过程<ul>
+<li>功能自动化测试：测试工具（或者框架）录制/编写测试脚本，对软件的功能进行测试，并验证测试结果是否正确，从而替代部分手工测试工作，达到节约时间成本、人力成本</li>
+<li>性能自动化测试：通过性能工具来模拟成千上万的虚拟用户向系统发送请求，具而验证系统的处理能力</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-冒烟测试、回归测试、随机测试、探索型测试和安全测试"><a href="#5-冒烟测试、回归测试、随机测试、探索型测试和安全测试" class="headerlink" title="5. 冒烟测试、回归测试、随机测试、探索型测试和安全测试"></a>5. 冒烟测试、回归测试、随机测试、探索型测试和安全测试</h3><ol>
+<li>冒烟测试：先验证具体的基本功能是否实现，是否具备进行大规模系统测试</li>
+<li>回归测试：修改之后的旧代码，从新测试，检测有没有引进新的错误或者导致其他代码产生错误</li>
+<li>随机测试：输入数据是随机生成的，其目的是模拟用户的真实操作，并发现一些边缘型的错误</li>
+<li>探索性测试：一种测试思维方式，强调在碰到问题时及时改变测试策略        </li>
+</ol>
+<h2 id="1-2-分层的自动化测试"><a href="#1-2-分层的自动化测试" class="headerlink" title="1.2 分层的自动化测试"></a>1.2 分层的自动化测试</h2><p>测试金字塔的概念由敏捷大师 Mike Cohn 在他的 Succeeding with agile 一书中首次提出。<br>基本观念是：我们应该有更多的低级别的单元测试，而不仅仅是通过用户界面运行的端到端的测试。</p>
+<p>所谓传统的自动化测试我们可以理解为基于产品的UI层的自动化测试，它是将黑盒功能测试转化为由程序或者工具执行的一种自动化测试。<br>UI自动化测试成本维护高昂，UI易变。<br>分层自动化测试倡导的是由黑盒（UI）单层到黑白盒多层的自动化测试体系，从全面的黑盒自动化测试到对系统的不同曾次进行自动化测试。</p>
+<ol>
+<li>单元自动化测试<ul>
+<li>是指针对软件的最小可测试单元进行检查和验证。对于单元测试中的单元的含义，一般来说c语言是指一个函数，Java是指一个类，图形化软件是一个窗口或者菜单，需要用到测试框架。<ul>
+<li>Java：Junit、TestNG</li>
+<li>C#：NUnit</li>
+<li>python：unittest、pytest</li>
+</ul>
+</li>
+<li>Code Review 代码审查<ul>
+<li>Java：Eclipse的ReviewClipse和Jupiter</li>
+<li>python：Review Board</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口自动化测试<ul>
+<li>模块接口测试<ul>
+<li>测试模块之间的调用与返回，强调一个类方法或者函数的调用，并对返回结果的验证，同单元自动化测试</li>
+</ul>
+</li>
+<li>Web接口测试<ul>
+<li>服务器接口测试：是指测试浏览器与服务器的接口，通过HTTP协议实现前后端的数据传递测试</li>
+<li>外部接口测试：指调用的接口由第三方系统提供，典型例子就是第三方登录，用户登录信息的验证由第三方完成，并返回给当前系统是否验证通过</li>
+</ul>
+</li>
+<li>当然，接口测试也有类库或者工具，例如测试HTTP的有HttpUnit、Postman等</li>
+</ul>
+</li>
+<li>UI自动化测试<ul>
+<li>UI测试工具：UFT、Watir、Robot Framework、Selenium</li>
+<li>前端：QUnit就是针对JavaScript的单元测试工具</li>
+</ul>
+</li>
+</ol>
+<p>《Google测试之道》 一书中提到，测试类型分为大、中、小测试，采用比例1:2:7，大体对应UI层、Service、Unit  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">UI层</th>
+<th style="text-align:center">Service</th>
+<th style="text-align:center">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">大</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">小</td>
+</tr>
+<tr>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">70%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-3-什么项目适合做自动化测试"><a href="#1-3-什么项目适合做自动化测试" class="headerlink" title="1.3 什么项目适合做自动化测试"></a>1.3 什么项目适合做自动化测试</h2><ol>
+<li>任务测试明确，不会频繁变动</li>
+<li>每日构建后的测试验证</li>
+<li>比较频繁的回归测试</li>
+<li>软件系统的界面稳定，变动少</li>
+<li>需要在多平台上运行的测试案例，组合便利型的测试，大量的重复任务</li>
+<li>软件维护周期长</li>
+<li>项目进度压力不算太大</li>
+<li>被测软件系统开发较为规范，能够保证系统的可测试性</li>
+<li>具备大量的自动化测试平台</li>
+<li>测试人员较强的变成能力</li>
+</ol>
+<h2 id="1-4-市面上常见的自动化测试工具"><a href="#1-4-市面上常见的自动化测试工具" class="headerlink" title="1.4 市面上常见的自动化测试工具"></a>1.4 市面上常见的自动化测试工具</h2><ol>
+<li>UFT：HP开发，QTP与ST合并而来。企业级自测工具，提供强大医用的录制回放功能，兼容对象识别模式与图像识别模式两种识别方式，支持B/S C/S两种架构</li>
+<li>Robot Framework：基于Python编写的自动化测试框架，可扩展，支持关键字，同时可以测试多种客户端或者接口，可以分布式测试</li>
+<li>Watir：基于Web模式的自动化功能测试工具。Wair是一个Ruby语言库</li>
+<li>Selenium：是一个Web应用程序测试工具，支持多平台、多浏览器、多语言，应用广泛</li>
+</ol>
+<h2 id="1-5-Selenium工具介绍"><a href="#1-5-Selenium工具介绍" class="headerlink" title="1.5 Selenium工具介绍"></a>1.5 Selenium工具介绍</h2><p>基于Web应用程序的自动化测试，但不局限于此，它还支持所有基于web的管理任务自动化</p>
+<p>特点：</p>
+<ul>
+<li>开源免费</li>
+<li>多浏览器支持：Firefox、Chrome、IE、Opera、Edge</li>
+<li>多平台支持：Linux、windows、Mac</li>
+<li>多语言：Java、Python、Ruby、JavaScript、C#、C++</li>
+<li>对web页面的良好的支持</li>
+<li>简单API、灵活（用开发语言驱动）</li>
+<li>支持分布式测试用例</li>
+</ul>
+<p>Selenium：</p>
+<ul>
+<li>Selenium IDE：嵌入火狐Firefox的一个插件，实现简单的浏览器操作录制、回放，快速创建bug重现脚本，通过IDE将重现的步骤记录下来，重现BUG</li>
+<li>Selenium Grid：自动化测试辅助工具，Grid通过利用现有的计算机基础设施，能加快Web-App的功能测试，利用Grid可以很方便的实现多台机器上和异构环境中测试用例</li>
+<li>Selenium RC：家族的核心部分，通过Selenium RC的服务器作为代理服务器去访问应用。Selenium Libraries库主要用于编写测试脚本，用来控制Selenium Server库。Selenium Server负责控制浏览器行为。<ul>
+<li>client</li>
+<li>Server<ul>
+<li>Launcher：用于启动浏览器，把Selenium Core加载到浏览器页面当中，并把浏览器的代理设置为Selenium Server的Http Proxy</li>
+<li>Http Proxy：代理服务器(Proxy)是网络信息的中转站</li>
+<li>Core：是被Selenium Server嵌入到到浏览器的页面中，其实 Selenium Core就是一堆JavaScript函数的集合，通过这些JS函数，可以实现程序对浏览器的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Selenium 2.0 = Selenium 1.0 + WebDriver<br>WebDriver是Selenium RC的替代品，为了保持向下兼容，并没有完全抛弃 Selenium Core，新的项目可以直接使用WebDriver</p>
+<ul>
+<li>Selenium RC：是在浏览器中运行JS脚本，使用浏览器内置的JS的编译器来翻译和执行selenese（selenese是Selenium命令合集）</li>
+<li>WebDriver：是通过原生浏览器支持或者浏览器扩展来直接控制浏览器。WebDriver针对各个浏览器而开发，取代了嵌入到被测Web应用中的JavaScript，与浏览器紧密集成，因此支持创建更高级的测试，便面的JavaScript安全模型导致的限制，还利用操作系统级别的调用，模拟用户输入。可以绕过JavaScript沙箱</li>
+</ul>
+<h2 id="1-6-前端技术介绍"><a href="#1-6-前端技术介绍" class="headerlink" title="1.6 前端技术介绍"></a>1.6 前端技术介绍</h2><ol>
+<li>HTML</li>
+<li>JavaScript</li>
+<li>XML</li>
+</ol>
+<h2 id="1-7-前端工具介绍"><a href="#1-7-前端工具介绍" class="headerlink" title="1.7 前端工具介绍"></a>1.7 前端工具介绍</h2><ol>
+<li>FireBug</li>
+<li>FirePath：快速检查和生成XPath1.0表达式</li>
+<li>Chrome、IE</li>
+</ol>
+<h2 id="1-8-开发语言选择"><a href="#1-8-开发语言选择" class="headerlink" title="1.8 开发语言选择"></a>1.8 开发语言选择</h2><p>本文选择的是Python</p>
+<h1 id="2-测试环境搭建"><a href="#2-测试环境搭建" class="headerlink" title="2. 测试环境搭建"></a>2. 测试环境搭建</h1><h2 id="2-1-Windows下的环境搭建"><a href="#2-1-Windows下的环境搭建" class="headerlink" title="2.1 Windows下的环境搭建"></a>2.1 Windows下的环境搭建</h2><h3 id="2-1-1-安装Python"><a href="#2-1-1-安装Python" class="headerlink" title="2.1.1 安装Python"></a>2.1.1 安装Python</h3><h3 id="2-1-2-安装setuptools与pip"><a href="#2-1-2-安装setuptools与pip" class="headerlink" title="2.1.2 安装setuptools与pip"></a>2.1.2 安装setuptools与pip</h3><h3 id="2-1-3-安装Selenium"><a href="#2-1-3-安装Selenium" class="headerlink" title="2.1.3 安装Selenium"></a>2.1.3 安装Selenium</h3><h3 id="2-1-4-ActivePython"><a href="#2-1-4-ActivePython" class="headerlink" title="2.1.4 ActivePython"></a>2.1.4 ActivePython</h3><ul>
+<li>Python专用编程和调试工具，包含Python内核，同时可以访问Windows API的所有服务</li>
+<li>集成PIP，可以用PIP安装Selenium库</li>
+</ul>
+<h2 id="2-2-Ubuntu下环境搭建"><a href="#2-2-Ubuntu下环境搭建" class="headerlink" title="2.2 Ubuntu下环境搭建"></a>2.2 Ubuntu下环境搭建</h2><h2 id="2-3-使用IDLE编写Python"><a href="#2-3-使用IDLE编写Python" class="headerlink" title="2.3 使用IDLE编写Python"></a>2.3 使用IDLE编写Python</h2><h2 id="2-4-编写第一个自动化脚本"><a href="#2-4-编写第一个自动化脚本" class="headerlink" title="2.4 编写第一个自动化脚本"></a>2.4 编写第一个自动化脚本</h2><p>在执行程序的时候，如果遇到错误代码是如下样子：  </p>
+<blockquote>
+<p>selenium.common.exceptions.WebDriverException: Message: ‘geckodriver’ executable needs to be in PATH.   </p>
+</blockquote>
+<p>则需要下载 geckodriver驱动文件，放在/usr/local/bin目录里。<br>下载网址是：<a href="https://github.com/mozilla/geckodriver/releases/" target="_blank" rel="external">https://github.com/mozilla/geckodriver/releases/</a><br>如果是Linux系统，下载文件名是：geckodriver-v0.16.1-linux64.tar.gz （最新版本即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">from time import sleep</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&quot;http://www.baidu.com&quot;)</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;Selenium2&quot;)</div><div class="line">driver.find_element_by_id(&quot;su&quot;).click()</div><div class="line"></div><div class="line">sleep(5)</div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h2 id="2-5-安装浏览器驱动"><a href="#2-5-安装浏览器驱动" class="headerlink" title="2.5 安装浏览器驱动"></a>2.5 安装浏览器驱动</h2><p>地址：<a href="http://www.seleniumhq.org/download" target="_blank" rel="external">Selenium - Web Browser Automation</a></p>
+<p>如果打不开，百度搜索相应的驱动。安装位置，Windows安装在path环境变量下，Linux安装在/usr/local/bin<br><a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-expert-selenium-ide/" target="_blank" rel="external">FireFoxdriver地址</a><br><a href="http://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip" target="_blank" rel="external">Chromedriver地址</a><br><a href="http://selenium-release.storage.googleapis.com/index.html" target="_blank" rel="external">IEdriver地址</a> 需要对应你的Selenium版本  <a href="http://blog.csdn.net/jichuang123/article/details/53008581" target="_blank" rel="external">windows下 IEDriver相关设置</a><br><a href="https://pypi.python.org/pypi/HTMLTestRunner" target="_blank" rel="external">HTMLTestRunner.py地址</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install xvfb</div><div class="line">sudo apt-get install unzip</div><div class="line"></div><div class="line">wget -N http://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip</div><div class="line">unzip chromedriver_linux64.zip</div><div class="line">chmod +x chromedriver</div><div class="line"></div><div class="line">sudo mv -f chromedriver /usr/local/share/chromedriver</div><div class="line">sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver</div><div class="line">sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver</div></pre></td></tr></table></figure>
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-expert-selenium-ide/" target="_blank" rel="external">FireFox驱动地址</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">selenium官方加上第三方宣布支持的驱动有很多种；除了PC端的浏览器之外，还支持iphone、Android的driver；大概记录一下selenium支持的各种driver的用途与说明。</div><div class="line">selenium可支持的PC浏览器驱动包括：</div><div class="line">FF driver【包含在各自语言的客户端里】</div><div class="line">safari driver【包含在selenium server中】</div><div class="line">ie driver</div><div class="line">chrome driver 【第三方】</div><div class="line">opera driver【第三方】</div><div class="line"></div><div class="line">selenium可支持的伪浏览器驱动：</div><div class="line">PhantomJS Driver【第三方】</div><div class="line">HtmlUnit Driver【包含在selenium server中】</div><div class="line"></div><div class="line">selenium可支持的移动端驱动：</div><div class="line">Windows Phone driver 【第三方】</div><div class="line">Selendroid -Selenium for android【第三方】</div><div class="line">ios-driver 【第三方】</div><div class="line">Appium  支持iphone、ipad、android、FirefoxOS【第三方】</div><div class="line">上述的所有驱动不仅可以直接通过各自语言客户端来调用，还是注册到selenium grid中进行分布式的远程调用。</div><div class="line"></div><div class="line">因为移动端的driver都没有尝试过，所以就不做说明。PC端的driver都是基于浏览器的，主要分为2种类型：</div><div class="line">一种是真实的浏览器driver</div><div class="line">比如：safari、ff都是以插件形式驱动浏览器本身的；ie、chrome都是通过二进制文件来驱动浏览器本身的；</div><div class="line">这些driver都是直接启动并通过调用浏览器的底层接口来驱动浏览器的，因此具有最真实的用户场景模拟，主要用于进行web的兼容性测试使用。</div><div class="line"></div><div class="line">一种是伪浏览器driver</div><div class="line">selenium支持的伪浏览器包括htmlunit、PhantomJS；他们都不是真正的在浏览器、都没有GUI，而是具有支持html、js等解析能力的类浏览器程序；这些程序不会渲染出网页的显示内容，但是支持页面元素的查找、JS的执行等；由于不进行css及GUI渲染，所以运行效率上会比真实浏览器要快很多，主要用在功能性测试上面。</div><div class="line">htmlunit是Java实现的类浏览器程序，包含在selenium server中，无需驱动，直接实例化即可；其js的解析引擎是Rhino</div><div class="line">PhantomJS是第三方的一个独立类浏览器应用，可以支持html、js、css等执行；其驱动是Ghost driver在1.9.3版本之后已经打包进了主程序中，因此只要下载一个主程序即可；其js的解析引擎是chrome 的V8。</div><div class="line"></div><div class="line">driver类型	优点	缺点	应用</div><div class="line">真实浏览器driver	真实模拟用户行为	效率、稳定性低	兼容性测试</div><div class="line">HtmlUnit	速度快	js引擎不是主流的浏览器支持的	包含少量js的页面测试</div><div class="line">PhantomJS	速度中等、模拟行为接近真实	不能模拟不同/特定浏览器的行为	非GUI的功能性测试</div><div class="line">PS：除上述的几种真实浏览器driver中，也可以通过不同的手段来取消浏览器的css解析、界面渲染等目的；这样既可以保证浏览器的真实兼容性、也可以提高执行效率问题；使用的手段有：autoit、pyvirtualdisplay、浏览器设置等。</div></pre></td></tr></table></figure>
+<h2 id="2-6-不同语言使用WebDriver"><a href="#2-6-不同语言使用WebDriver" class="headerlink" title="2.6 不同语言使用WebDriver"></a>2.6 不同语言使用WebDriver</h2><ul>
+<li>导入selenium（WebDriver）相关模块</li>
+<li>调用浏览器驱动，获取浏览器句柄，并启动</li>
+<li>通过句柄访问地址百度</li>
+<li>通过句柄操作页面元素（百度输入框和按钮）</li>
+<li>通过句柄关闭浏览器</li>
+</ul>
+<h1 id="3-Python基础"><a href="#3-Python基础" class="headerlink" title="3. Python基础"></a>3. Python基础</h1><h2 id="3-1-Python哲学"><a href="#3-1-Python哲学" class="headerlink" title="3.1 Python哲学"></a>3.1 Python哲学</h2><h2 id="3-2-输入输出"><a href="#3-2-输入输出" class="headerlink" title="3.2 输入输出"></a>3.2 输入输出</h2><h2 id="3-3-分支与循环"><a href="#3-3-分支与循环" class="headerlink" title="3.3 分支与循环"></a>3.3 分支与循环</h2><h2 id="3-4-数组与字典"><a href="#3-4-数组与字典" class="headerlink" title="3.4 数组与字典"></a>3.4 数组与字典</h2><h2 id="3-5-函数、类和方法"><a href="#3-5-函数、类和方法" class="headerlink" title="3.5 函数、类和方法"></a>3.5 函数、类和方法</h2><h2 id="3-6-模组、类库、模块"><a href="#3-6-模组、类库、模块" class="headerlink" title="3.6 模组、类库、模块"></a>3.6 模组、类库、模块</h2><p>当多个模块之间存在引用，模块内之间文件里的类存在继承和引用关系<br>需要在模块内创建一个空的<strong>init</strong>.py文件<br>当一个模块调用另一个模块的时候<br>用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import sys  </div><div class="line">sys.path.append(&quot;./model&quot;)  # (model就是相应的被引用模块)  </div><div class="line">from model import new_count</div></pre></td></tr></table></figure></p>
+<h1 id="4-WebDriver-API"><a href="#4-WebDriver-API" class="headerlink" title="4. WebDriver API"></a>4. WebDriver API</h1><h2 id="4-1-从定位元素开始"><a href="#4-1-从定位元素开始" class="headerlink" title="4.1 从定位元素开始"></a>4.1 从定位元素开始</h2><p>WebDriver在Python中一个有8种方法找到页面元素：  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">标签</th>
+<th style="text-align:left">定位元素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">name</td>
+</tr>
+<tr>
+<td style="text-align:left">class name</td>
+<td style="text-align:left">tag name</td>
+</tr>
+<tr>
+<td style="text-align:left">link text</td>
+<td style="text-align:left">partial link text</td>
+</tr>
+<tr>
+<td style="text-align:left">xpath</td>
+<td style="text-align:left">css selector</td>
+</tr>
+<tr>
+<td style="text-align:left">find_element_by_id()</td>
+<td style="text-align:left">find_element_by_name()</td>
+</tr>
+<tr>
+<td style="text-align:left">find_element_by_class_name()</td>
+<td style="text-align:left">find_element_by_tag_name()</td>
+</tr>
+<tr>
+<td style="text-align:left">find_element_by_link_text()</td>
+<td style="text-align:left">find_element_by_partial_link_text() 通过部分文字定位</td>
+</tr>
+<tr>
+<td style="text-align:left">find_element_by_xpath()</td>
+<td style="text-align:left">find_element_by_css_selector()</td>
+</tr>
+</tbody>
+</table>
+<p>XPath定位：<br>绝对路径定位<br>find_element_by_xpath(“/html/body/div/div[2]/div/div/from/span/input”)</p>
+<p>利用元素属性定位：<br>find_element_by_xpath(“//input[@id=’kw’]”)<br>find_element_by_xpath(“//input[@name=’wd’]”)<br>find_element_by_xpath(“//input[@class=’s_ipt’]”)<br>find_element_by_xpath(“//*[@class=’s_ipt’]”)<br>find_element_by_xpath(“//input[@maxlength=’100’]”)<br>find_element_by_xpath(“//input[@autocomplete=’off’]”)<br>find_element_by_xpath(“//input[@type=’submit’]”)  </p>
+<p>层级与属性结合：<br>find_element_by_xpath(“//span[@class=’bg_s_ipt_wr’]/input”)<br>find_element_by_xpath(“//form[@id=’form’]/span/input”)</p>
+<p>使用逻辑运算符：<br>find_element_by_xpath(“//input[@id=’kw’ and @class=’su’]/span/input”)</p>
+<p>css定位<br>通过class属性定位：<br>find_element_by_css_selector(“.s_ipt”)<br>find_element_by_css_selector(“.bg s_btn”)</p>
+<p>通过id属性定位：<br>find_element_by_css_selector(“#kw”)<br>find_element_by_css_selector(“#su”)</p>
+<p>通过标签名定位：<br>find_element_by_css_selector(“input”)<br>find_element_by_css_selector(“span&gt;input”)</p>
+<p>通过属性定位：<br>find_element_by_css_selector(“[autocomplete=off]”)<br>find_element_by_css_selector(“[name=’kw’]”)<br>find_element_by_css_selector(“[type=’submit’]”)</p>
+<p>组合定位：<br>find_element_by_css_selector(“form.fm&gt;span&gt;input.s_ipt”)<br>find_element_by_css_selector(“form.fm&gt;span&gt;input#kw”)</p>
+<p>用by定位元素<br>略过。。</p>
+<h2 id="4-2-控制浏览器"><a href="#4-2-控制浏览器" class="headerlink" title="4.2 控制浏览器"></a>4.2 控制浏览器</h2><h2 id="4-3-元素控制"><a href="#4-3-元素控制" class="headerlink" title="4.3 元素控制"></a>4.3 元素控制</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">driver.set_window_size(480,800)</td>
+<td style="text-align:left">控制浏览器宽400高800</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.get(url)</td>
+<td style="text-align:left">获取url地址页面</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.forward()</td>
+<td style="text-align:left">前进</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.back()</td>
+<td style="text-align:left">后退</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.quit()</td>
+<td style="text-align:left">退出</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.refresh()</td>
+<td style="text-align:left">刷新页面</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).clear()</td>
+<td style="text-align:left">清除文本</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).send_keys(“abc”)</td>
+<td style="text-align:left">模拟按键输入</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).click()</td>
+<td style="text-align:left">单击元素</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).submit()</td>
+<td style="text-align:left">提交</td>
+</tr>
+<tr>
+<td style="text-align:left">size = driver.find_element_by_css_selector(“#id”).size</td>
+<td style="text-align:left">输入框的尺寸</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).text</td>
+<td style="text-align:left">文本</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).get_attribute()</td>
+<td style="text-align:left">获取id、name、type其他任意属性</td>
+</tr>
+<tr>
+<td style="text-align:left">driver.find_element_by_css_selector(“#id”).is_displayed()</td>
+<td style="text-align:left">返回元素结果是否可见</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-4-鼠标事件"><a href="#4-4-鼠标事件" class="headerlink" title="4.4 鼠标事件"></a>4.4 鼠标事件</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">perform()</td>
+<td style="text-align:left">执行所有ActionChains中储存的行为</td>
+</tr>
+<tr>
+<td style="text-align:left">context_click()</td>
+<td style="text-align:left">右击</td>
+</tr>
+<tr>
+<td style="text-align:left">double_click()</td>
+<td style="text-align:left">双击</td>
+</tr>
+<tr>
+<td style="text-align:left">drag_and_drop()</td>
+<td style="text-align:left">拖动</td>
+</tr>
+<tr>
+<td style="text-align:left">move_to_element()</td>
+<td style="text-align:left">鼠标悬停</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">from selenium.webdriver.common.action_chains import ActionChains</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&quot;https://www.baidu.com/&quot;)</div><div class="line"># 定位右击的元素</div><div class="line">right_click = driver.find_element_by_id(&quot;su&quot;)</div><div class="line"># 执行右击操作</div><div class="line">ActionChains(driver).context_click(right_click).perform()</div><div class="line"></div><div class="line"># 将浏览器句柄driver作为参数，传入ActionChains行动链</div><div class="line"># context_click() 鼠标右击操作，需要传入元素定位</div><div class="line"># perform() 可以理解为对所有行动操作列表的提交</div><div class="line"># ActionChains(driver).move_to_element(above).perferm() 鼠标悬停</div><div class="line"># ActionChains(driver).double_click(double_click).perferm() 鼠标双击</div><div class="line"># element, target = driver.find_element_by_id(&quot;xx&quot;), driver.find_element_by_id(&quot;xx&quot;)</div><div class="line"># ActionChains(driver).drag_and_drop(element, target).perferm() 鼠标拖放</div></pre></td></tr></table></figure>
+<h2 id="4-5-键盘事件"><a href="#4-5-键盘事件" class="headerlink" title="4.5 键盘事件"></a>4.5 键盘事件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">from selenium.webdriver.common.keys import Keys</div><div class="line">from time import sleep</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&quot;https://www.baidu.com/&quot;)</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;seleniumm&quot;)</div><div class="line"># driver.find_element_by_id(&quot;su&quot;).click()</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.BACK_SPACE)  # 回退 删除</div><div class="line"></div><div class="line"># driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.SPACE)  # 添加空格</div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(u&quot; &quot;)  # 添加空格</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(u&quot;教程&quot;)  # 添加文字</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL, &apos;a&apos;)  # 输入框全选</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL, &apos;x&apos;)  # 输入框剪切</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL, &apos;v&apos;)  # 输入框复制</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.ENTER)  # 回车代替单击</div><div class="line"></div><div class="line">sleep(5)</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<p>常用键盘操作：<br>操作|效果<br>:-|:-<br>send_keys(Keys.BACK_SPACE)|删除<br>send_keys(Keys.SPACE)|空格<br>send_keys(Keys.TAB)|制表符<br>send_keys(Keys.ESCAPE)|回退<br>send_keys(Keys.ENTER)|回车<br>send_keys(Keys.CONTROL, ‘a’)|全选<br>send_keys(Keys.CONTROL, ‘c’)|复制<br>send_keys(Keys.CONTROL, ‘v’)|粘贴<br>send_keys(Keys.CONTROL, ‘x’)|剪切<br>send_keys(Keys.F1)|键盘F1<br>send_keys(Keys.F12)|键盘F12</p>
+<h2 id="4-6-获取验证信息"><a href="#4-6-获取验证信息" class="headerlink" title="4.6 获取验证信息"></a>4.6 获取验证信息</h2><p>title = driver.title<br>now_url = driver.current_url<br>user = driver.find_element_by_id(‘spanUid’).text</p>
+<h2 id="4-7-设置元素等待"><a href="#4-7-设置元素等待" class="headerlink" title="4.7 设置元素等待"></a>4.7 设置元素等待</h2><p>WebDirverWait(driver, 5, 0.5)<br>WebDirverWait(driver, timeout, poll_frequency=0.5, ignored_exceptions=None)</p>
+<ul>
+<li>driver:浏览器驱动</li>
+<li>timeout：超时时长</li>
+<li>poll_frequency:间隔时长</li>
+<li>ignored_exceptions:超时后的异常信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">from selenium.webdriver.common.by import By</div><div class="line">from selenium.webdriver.support.ui import WebDriverWait</div><div class="line">from selenium.webdriver.support import expected_conditions as EC</div><div class="line">from selenium.webdriver.common.keys import Keys</div><div class="line">import time</div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&quot;https://www.baidu.com&quot;)</div><div class="line"></div><div class="line">element = WebDriverWait(driver, 5, 0.5).until(</div><div class="line">    EC.presence_of_all_elements_located((By.ID, &quot;kw&quot;))</div><div class="line">)</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(&apos;selenium&apos;)</div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.ENTER)</div><div class="line"># element.send_keys(&apos;selenium&apos;)</div><div class="line">time.sleep(5)</div><div class="line">driver.quit()</div><div class="line"></div><div class="line"># until(method, message=&apos;&apos;) 调用该方法提供的驱动程序作为一个参数，直到返回为True</div></pre></td></tr></table></figure>
+<p>第二种方法：<br>隐式等待 implicitly_wait()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">from selenium.common.exceptions import NoSuchElementException</div><div class="line">from time import ctime</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.implicitly_wait(10)  # 休眠时间</div><div class="line">driver.get(&quot;http://www.baidu.com&quot;)</div><div class="line">try:</div><div class="line">    print(ctime())</div><div class="line">    driver.find_element_by_id(&quot;kw22&quot;).send_keys(&apos;selenium&apos;)</div><div class="line">except NoSuchElementException as e:</div><div class="line">    print(e)</div><div class="line">finally:</div><div class="line">    print(ctime())</div><div class="line">    driver.quit()</div></pre></td></tr></table></figure>
+<p>第三种方法：<br>sleep<br>from time import sleep<br>sleep(10)</p>
+<h2 id="4-8-复选"><a href="#4-8-复选" class="headerlink" title="4.8 复选"></a>4.8 复选</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">import os, time</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">file_path = &apos;file:///&apos; + os.path.abspath(&apos;checkbox.html&apos;)  # abspath()返回绝对路径</div><div class="line">driver.get(file_path)</div><div class="line"></div><div class="line"># inputs = driver.find_element_by_tag_name(&apos;input&apos;)</div><div class="line"># </div><div class="line"># for i in inputs:</div><div class="line">#     if i.get_attribute(&apos;type&apos;) == &apos;checkbox&apos;:</div><div class="line">#         i.click()</div><div class="line">#         time.sleep(1)</div><div class="line"></div><div class="line"># checkboxs = driver.find_elements_by_xpath(&quot;//input[@type=&apos;checkbox&apos;]&quot;)</div><div class="line">checkboxs = driver.find_elements_by_css_selector(&quot;input[type=checkbox]&quot;)</div><div class="line"></div><div class="line">for checkbox in checkboxs:</div><div class="line">    checkbox.click()</div><div class="line">    time.sleep(1)</div><div class="line"></div><div class="line">driver.find_elements_by_css_selector(&apos;input[type=checkbox]&apos;).pop().click()  # 去掉最后一个</div><div class="line"></div><div class="line"># pop(0) 第一个</div><div class="line"># pop(-1) 最后一个</div><div class="line"># pop(1) 第二个</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h2 id="4-9-多表单切换"><a href="#4-9-多表单切换" class="headerlink" title="4.9 多表单切换"></a>4.9 多表单切换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">driver.switch_to.frame(&quot;if&quot;)  # 切换到id = if的frame框架，frame()可以去id或者name属性 或者</div><div class="line">xf = driver.find_element_by_xpath(&quot;//*[@class=&apos;if&apos;]&quot;)</div><div class="line">driver.switch_to.frame(xf)</div><div class="line">switch_to.default_content()  # 跳到最外层表单</div></pre></td></tr></table></figure>
+<h2 id="4-10-多窗口切换"><a href="#4-10-多窗口切换" class="headerlink" title="4.10 多窗口切换"></a>4.10 多窗口切换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">import time</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.implicitly_wait(10)</div><div class="line">driver.get(&quot;http://www.baidu.com&quot;)</div><div class="line"></div><div class="line"># 获得百度搜索窗口句柄</div><div class="line">sreach_windows = driver.current_window_handle</div><div class="line"># a.lb:nth-child(7)</div><div class="line"># html body div#wrapper div#head div.head_wrapper div#u1 a.lb</div><div class="line"></div><div class="line"># a_links = driver.find_element_by_css_selector(&quot;a.lb:nth-child(7)&quot;)</div><div class="line"># print a_links.text</div><div class="line"></div><div class="line"># links = driver.find_elements_by_link_text(&apos;登录&apos;)</div><div class="line"># print links</div><div class="line"></div><div class="line">driver.find_elements_by_link_text(&apos;登录&apos;).pop().click()</div><div class="line">driver.find_element_by_link_text(&quot;立即注册&quot;).click()</div><div class="line"></div><div class="line"># driver.find_element_by_link_text(&apos;登录&apos;).click()</div><div class="line"># driver.find_element_by_link_text(&quot;立即注册&quot;).click()</div><div class="line"></div><div class="line"># 获得当前所有打开的窗口的句柄</div><div class="line">all_handles = driver.window_handles</div><div class="line"></div><div class="line"># 进入注册窗口</div><div class="line">for handle in all_handles:</div><div class="line">    if handle != sreach_windows:</div><div class="line">        driver.switch_to.window(handle)</div><div class="line">        print &apos;now register window!&apos;</div><div class="line">        driver.find_element_by_name(&quot;account&quot;).send_keys(&apos;username&apos;)</div><div class="line">        driver.find_element_by_name(&quot;password&quot;).send_keys(&apos;password&apos;)</div><div class="line">        time.sleep(2)</div><div class="line"></div><div class="line"># 回到搜索窗口</div><div class="line">for handle in all_handles:</div><div class="line">    if handle == sreach_windows:</div><div class="line">        print &apos;now sreach window&apos;</div><div class="line">        driver.find_element_by_id(&apos;TANGRAM__PSP_2__closeBtn&apos;).click()</div><div class="line">        driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;selenium&quot;)</div><div class="line">        driver.find_element_by_id(&quot;su&quot;).click()</div><div class="line">        print driver.current_window_handle</div><div class="line">        time.sleep(5)</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h2 id="4-11-警告框处理"><a href="#4-11-警告框处理" class="headerlink" title="4.11 警告框处理"></a>4.11 警告框处理</h2><p>switch_to_alert()方法 定位到 alert/confirm/prompt<br>text/accept/dismiss/send_keys等方法进行操作<br>命令|效果<br>:-|:-<br>text|返回alert/confirm/prompt中的文字<br>accpet()|接受现有警告框<br>dismiss()|解散现有警告框<br>send_keys(keysToSend)|发送文本至警告框 keysToSend:将文本发送至警告框<br>switch_to_alert()|方法接受弹出来的窗口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">from selenium.webdriver.common.action_chains import ActionChains</div><div class="line">import time</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.implicitly_wait(10)</div><div class="line">driver.get(&quot;http://www.baidu.com&quot;)</div><div class="line"></div><div class="line"># 鼠标悬停至“设置”链接</div><div class="line"># link = driver.find_element_by_link_text(&apos;设置&apos;)</div><div class="line">link = driver.find_elements_by_link_text(&apos;设置&apos;).pop()</div><div class="line">ActionChains(driver).move_to_element(link).perform()</div><div class="line"></div><div class="line"># 打开搜索设置</div><div class="line"># time.sleep(5)</div><div class="line"># print driver.find_element_by_link_text(&apos;搜索设置&apos;)</div><div class="line">driver.find_element_by_link_text(&apos;搜索设置&apos;).click()</div><div class="line"></div><div class="line">js = &quot;var q=document.getElementsByClassName(\&quot;bdlayer pfpanel\&quot;);q.style=\&quot;display: block; top: 0px; opacity: 1;\&quot;&quot;</div><div class="line">driver.execute_script(js)</div><div class="line">time.sleep(3)</div><div class="line"></div><div class="line"># res = driver.find_element_by_css_selector(&quot;.bdlayer.pfpanel&quot;)</div><div class="line"># print res</div><div class="line"># print res.is_displayed()</div><div class="line"></div><div class="line"># 设置</div><div class="line">driver.find_element_by_css_selector(&quot;#sh_1&quot;).click()</div><div class="line"></div><div class="line"># 保存设置</div><div class="line"># driver.find_element_by_class_name(&quot;prefpanelgo&quot;).click()</div><div class="line">driver.find_element_by_css_selector(&quot;.prefpanelgo&quot;).click()</div><div class="line"># driver.find_element_by_link_text(&apos;恢复默认&apos;).click()</div><div class="line">time.sleep(2)</div><div class="line"></div><div class="line"># 接受警告框</div><div class="line">driver.switch_to_alert().accept()</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure></p>
+<h2 id="4-12"><a href="#4-12" class="headerlink" title="4.12"></a>4.12</h2><h3 id="4-12-1-send-keys实现上传"><a href="#4-12-1-send-keys实现上传" class="headerlink" title="4.12.1 send_keys实现上传"></a>4.12.1 send_keys实现上传</h3><p>找到对应的input标签，直接send_keys(文件),传入对应文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">import os</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.implicitly_wait(5)</div><div class="line">file_path = &apos;file:///&apos; + os.path.abspath(&apos;upfile.html&apos;)</div><div class="line">driver.get(file_path)</div><div class="line"></div><div class="line"># 定位上传的input，添加本地文件</div><div class="line">driver.find_element_by_name(&apos;file&apos;).send_keys(&apos;D:\\upload_file.txt&apos;)</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure></p>
+<h3 id="4-12-2-AutoIt实现上传"><a href="#4-12-2-AutoIt实现上传" class="headerlink" title="4.12.2 AutoIt实现上传"></a>4.12.2 AutoIt实现上传</h3><p>官方下载地址：<a href="http://www.aotuitscript.com/site/" target="_blank" rel="external">http://www.aotuitscript.com/site/</a><br>windows GUI(图形用户界面)自动化测试</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AutoIt Windows Info</td>
+<td style="text-align:left">用于识别Windows控件信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Compile Script to.exe</td>
+<td style="text-align:left">用于将AutoIt生成exe执行文件</td>
+</tr>
+<tr>
+<td style="text-align:left">Run Script</td>
+<td style="text-align:left">用于执行AutoIt脚本</td>
+</tr>
+<tr>
+<td style="text-align:left">SciTE Script Editor</td>
+<td style="text-align:left">用于编写AutoIt脚本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-13-下载文件"><a href="#4-13-下载文件" class="headerlink" title="4.13 下载文件"></a>4.13 下载文件</h3><p>WebDriver允许我们设置默认的文件下载路径，也就是说，文件会自动下载并且存放到设置的目录中。<br>HTTP Content-type 常用对照表：<a href="http://tool.oschina.net/commons" target="_blank" rel="external">http://tool.oschina.net/commons</a><br>curl -I 可以查看Content-type的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">import os</div><div class="line"></div><div class="line">fp = webdriver.FirefoxProfile()</div><div class="line"></div><div class="line">fp.set_preference(&quot;browser.download.folderList&quot;, 2)  # 设置成0代表保存在默认的浏览器下载目录，设置2代表保存在指定的目录</div><div class="line">fp.set_preference(&quot;browser.download.manager.showWhenStarting&quot;, False)  # 是否显示开始 True为显示，False为不显示</div><div class="line">fp.set_preference(&quot;browser.download.dir&quot;, &apos;/home/wy/&apos;)</div><div class="line"># fp.set_preference(&quot;browser.download.dir&quot;, os.getcwd())  # 设置下载目录 os.getcwd()当前的目录</div><div class="line">fp.set_preference(&quot;browser.helperApps.neverAsk.saveToDisk&quot;, &quot;application/octet-stream&quot;)  # 下载文件的类型 指定要下载页面的Content-type值，‘application/octet-stream’为文件类型</div><div class="line"></div><div class="line">driver = webdriver.Firefox(firefox_profile=fp)</div><div class="line">driver.get(&quot;https://pypi.python.org/pypi/selenium#downloads&quot;)</div><div class="line"># driver.find_element_by_css_selector(&quot;.button.green&quot;).click()</div><div class="line"># driver.find_element_by_partial_link_text(&quot;selenium-2&quot;).click()</div><div class="line"></div><div class="line">driver.find_element_by_css_selector(&quot;.even&gt;td&gt;span&gt;a&quot;).click()</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure></p>
+<p>Chrome浏览器类似，设置其options：<br>download.default_directory：设置下载路径<br>profile.default_content_settings.popups：设置为 0 禁止弹出窗口<br>它的设置就简单多了，看个示例：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">from time import sleep</div><div class="line"></div><div class="line"></div><div class="line">options = webdriver.ChromeOptions()</div><div class="line">prefs = &#123;&apos;profile.default_content_settings.popups&apos;: 0, &apos;download.default_directory&apos;: &apos;d:\\&apos;&#125;</div><div class="line">options.add_experimental_option(&apos;prefs&apos;, prefs)</div><div class="line"></div><div class="line">driver = webdriver.Chrome(executable_path=&apos;D:\\chromedriver.exe&apos;, chrome_options=options)</div><div class="line">driver.get(&apos;http://sahitest.com/demo/saveAs.htm&apos;)</div><div class="line">driver.find_element_by_xpath(&apos;//a[text()=&quot;testsaveas.zip&quot;]&apos;).click()</div><div class="line">sleep(3)</div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h3 id="4-14-操作Cookie"><a href="#4-14-操作Cookie" class="headerlink" title="4.14 操作Cookie"></a>4.14 操作Cookie</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">操作</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">get_cookies()</td>
+<td style="text-align:left">获得所有cookie信息</td>
+</tr>
+<tr>
+<td style="text-align:left">get_cookie(name)</td>
+<td style="text-align:left">返回字典的key为”name”的cookie信息</td>
+</tr>
+<tr>
+<td style="text-align:left">add_cookie(cookie_dict)</td>
+<td style="text-align:left">添加cookie ‘cookie_dict’指字典对象，必须有name和value值</td>
+</tr>
+<tr>
+<td style="text-align:left">delete_cookie(name,optionsString)</td>
+<td style="text-align:left">删除cookie信息 “name”是要删除的cookie的名称，“optionsString”是该cookie的选项，目前支持的选项包括“路径”，“域”</td>
+</tr>
+<tr>
+<td style="text-align:left">delete_all_cookies()</td>
+<td style="text-align:left">删除所有cookie信息</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.implicitly_wait(3)</div><div class="line"></div><div class="line"># 添加cookie</div><div class="line">driver.add_cookie(&#123;&apos;name&apos;: &apos;key-aaa&apos;, &apos;value&apos;: &apos;key-bbb&apos;&#125;)</div><div class="line"></div><div class="line">driver.get(&quot;http://www.youdao.com&quot;)</div><div class="line"></div><div class="line"># 获得cookie信息</div><div class="line">cookies = driver.get_cookies()</div><div class="line"></div><div class="line">print cookies</div><div class="line"></div><div class="line">for cookie in cookies:</div><div class="line">    print cookie[&apos;name&apos;], &apos;-&gt;&apos;, cookie[&apos;value&apos;]</div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h3 id="4-15-调用JavaScript"><a href="#4-15-调用JavaScript" class="headerlink" title="4.15 调用JavaScript"></a>4.15 调用JavaScript</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">from time import sleep</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&quot;http://www.baidu.com&quot;)</div><div class="line"></div><div class="line"># 设置浏览器窗口大小</div><div class="line">driver.set_window_size(600, 600)</div><div class="line"></div><div class="line"># 搜索</div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;selenium&quot;)</div><div class="line">driver.find_element_by_id(&quot;su&quot;).click()</div><div class="line">sleep(2)</div><div class="line"></div><div class="line"># 通过JS设置浏览器窗口的滚动条位置</div><div class="line">js = &quot;window.scrollTo(100,450)&quot;</div><div class="line">driver.execute_script(js)</div><div class="line">sleep(3)</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h3 id="4-16-处理HTML5的视频播放"><a href="#4-16-处理HTML5的视频播放" class="headerlink" title="4.16 处理HTML5的视频播放"></a>4.16 处理HTML5的视频播放</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">from time import sleep</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.implicitly_wait(5)</div><div class="line">driver.get(&quot;http://videojs.com/&quot;)</div><div class="line"></div><div class="line">video = driver.find_element_by_xpath(&quot;.//*[@id=&apos;preview-player_html5_api&apos;]&quot;)</div><div class="line"># video = driver.find_element_by_xpath(&quot;body/Section[1]/div/video&quot;)</div><div class="line"></div><div class="line"># 返回播放文件地址</div><div class="line">url = driver.execute_script(&quot;return arguments[0].currentSrc;&quot;, video)</div><div class="line">print url</div><div class="line"></div><div class="line"># 播放视频</div><div class="line">print &quot;start&quot;</div><div class="line">driver.execute_script(&quot;return arguments[0].play()&quot;, video)</div><div class="line"></div><div class="line">sleep(15)</div><div class="line"></div><div class="line"># 暂停视频</div><div class="line">print &quot;pause&quot;</div><div class="line">driver.execute_script(&quot;arguments[0].pause()&quot;, video)</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h3 id="4-17-窗口截图"><a href="#4-17-窗口截图" class="headerlink" title="4.17 窗口截图"></a>4.17 窗口截图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line"></div><div class="line">from selenium import webdriver</div><div class="line">from time import sleep</div><div class="line"></div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&apos;http://www.baidu.com&apos;)</div><div class="line"></div><div class="line">driver.find_element_by_id(&apos;kw&apos;).send_keys(&apos;selenium&apos;)</div><div class="line">driver.find_element_by_id(&apos;su&apos;).click()</div><div class="line">sleep(2)</div><div class="line"></div><div class="line"># 截取当前窗口，并指定截图保存位置</div><div class="line">driver.get_screenshot_as_file(&quot;/home/wy/&quot;)</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure>
+<h3 id="4-18-关闭窗口"><a href="#4-18-关闭窗口" class="headerlink" title="4.18 关闭窗口"></a>4.18 关闭窗口</h3><p>driver.close()</p>
+<h3 id="4-19-验证码的处理"><a href="#4-19-验证码的处理" class="headerlink" title="4.19 验证码的处理"></a>4.19 验证码的处理</h3><ol>
+<li>叫开发人员去掉验证码</li>
+<li>设置万能验证码</li>
+<li>Python-tesseract光学识别 Tesseract OCR引擎的封装类</li>
+<li>记录 cookie 绕过验证码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># ...</div><div class="line"># 访问某网站...</div><div class="line"></div><div class="line">driver.get(&quot;http://xxx.com&quot;)</div><div class="line"></div><div class="line">driver.add_cookie(&#123;&apos;name&apos;:&apos;Login_UserNumber&apos;,&apos;value&apos;:&apos;username&apos;&#125;)</div><div class="line">driver.add_cookie(&#123;&apos;name&apos;:&apos;Login_Password&apos;,&apos;value&apos;:&apos;password&apos;&#125;)</div></pre></td></tr></table></figure>
+<h3 id="4-20-WebDriver原理"><a href="#4-20-WebDriver原理" class="headerlink" title="4.20 WebDriver原理"></a>4.20 WebDriver原理</h3><ol>
+<li>WebDriver启动浏览器，绑定指定端口，作为Remote Server</li>
+<li>Client 通过CommandExcuter发送HTTPRequest给Remote Server帧听端口</li>
+<li>Remote Server需要依赖原声的浏览器组件 转化浏览器的native调用</li>
+</ol>
+<p>接收客户端DEBUG<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div><div class="line">from selenium import webdriver</div><div class="line">import logging</div><div class="line"></div><div class="line">logging.basicConfig(level=logging.DEBUG)</div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&quot;http://www.baidu.com&quot;)</div><div class="line"></div><div class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;selenium&quot;)</div><div class="line">driver.find_element_by_id(&quot;su&quot;).click()</div><div class="line"></div><div class="line">driver.quit()</div></pre></td></tr></table></figure></p>
+<h1 id="5-自动化测试模型"><a href="#5-自动化测试模型" class="headerlink" title="5. 自动化测试模型"></a>5. 自动化测试模型</h1><p>测试模型：</p>
+<ol>
+<li>线性测试</li>
+<li>模块化驱动测试</li>
+<li>数据驱动测试</li>
+<li>关键字测试</li>
+</ol>
+<h2 id="5-1-自动化测试模型介绍"><a href="#5-1-自动化测试模型介绍" class="headerlink" title="5.1 自动化测试模型介绍"></a>5.1 自动化测试模型介绍</h2><h3 id="5-1-1-线性测试"><a href="#5-1-1-线性测试" class="headerlink" title="5.1.1 线性测试"></a>5.1.1 线性测试</h3><p>通过录制或编写对应用程序的操作步骤产生相应的线性脚本，每个测试脚本相对独立，且不产生其他依赖与调用，这是早期的自动化测试的形式，<br>单纯的模拟用户完整的操作场景，优势完整独立，缺点开发和维护的成本很高</p>
+<h3 id="5-1-2-模块化测试"><a href="#5-1-2-模块化测试" class="headerlink" title="5.1.2 模块化测试"></a>5.1.2 模块化测试</h3><p>把重复的操作独立成公共模块，当用例执行过程中用到这一个模块时，则被调用，最大限度的消除了重复，提高可维护性</p>
+<h3 id="5-1-3-数据驱动测试"><a href="#5-1-3-数据驱动测试" class="headerlink" title="5.1.3 数据驱动测试"></a>5.1.3 数据驱动测试</h3><p>数据驱动说的直白一点就是数据的参数化，因为输入数据的不同而引起不同的输出结果 Datapool</p>
+<h3 id="5-1-4-关键字驱动"><a href="#5-1-4-关键字驱动" class="headerlink" title="5.1.4 关键字驱动"></a>5.1.4 关键字驱动</h3><p>无法是把”数据”换成”关键字”，通过关键字的改变引起测试结果的改变<br>目前市面上的典型关键字驱动工具 QTP(目前已更名UFT-Unified Functional Testing)、Robot Framework(RIDE)工具为主<br>这类工具封装了底层的代码，提供用户独立的图形界面，以”填表格”的形式免除测试人员对写代码的恐惧，从而减低编写难度</p>
+<h1 id="6-selenium-IDE"><a href="#6-selenium-IDE" class="headerlink" title="6. selenium IDE"></a>6. selenium IDE</h1><p>不用翻墙的 安装地址：<a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/</a></p>
+<h1 id="7-unittest-单元测试框架"><a href="#7-unittest-单元测试框架" class="headerlink" title="7. unittest 单元测试框架"></a>7. unittest 单元测试框架</h1><h1 id="8-自动化测试高级应用"><a href="#8-自动化测试高级应用" class="headerlink" title="8. 自动化测试高级应用"></a>8. 自动化测试高级应用</h1><h1 id="9-Selenium-Grid2"><a href="#9-Selenium-Grid2" class="headerlink" title="9. Selenium Grid2"></a>9. Selenium Grid2</h1><h1 id="10-Python多线程"><a href="#10-Python多线程" class="headerlink" title="10. Python多线程"></a>10. Python多线程</h1><h1 id="11-自动化测试实战"><a href="#11-自动化测试实战" class="headerlink" title="11. 自动化测试实战"></a>11. 自动化测试实战</h1><ul>
+<li>mztestpro/目录<ul>
+<li>bbs/    论坛项目<ul>
+<li>data/    存放测试数据</li>
+<li>report/    用于存放HTML测试报告<ul>
+<li>image/    创建了image目录用于存放测试过程中的截图</li>
+</ul>
+</li>
+<li>test_case/    测试用例目录，用于存放测试用例及相关模块<ul>
+<li>models/    该目录下存放了一些公共的配置函数及公共类<ul>
+<li>driver.py </li>
+<li>function.py</li>
+<li>myunit.py</li>
+</ul>
+</li>
+<li>page_obj/        该目录用于存放测试用例的页面对象(Page Object)，根据自定义规则，以“*Page.py”命名的文件为封装的页面对象文件<ul>
+<li>*Page.py</li>
+</ul>
+</li>
+<li><em>_sta.py     测试用例文件。根据测试文件匹配规则，”</em>_sta.py“命名的文件将被当作自动化测试用例执行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>driver/</li>
+<li>package/</li>
+<li>run_bbs_test.py</li>
+<li>startup.bat</li>
+<li>自动化测试项目说明文档.md</li>
+</ul>
+</li>
+</ul>
+<h1 id="12-BDD框架指Lettuce入门"><a href="#12-BDD框架指Lettuce入门" class="headerlink" title="12. BDD框架指Lettuce入门"></a>12. BDD框架指Lettuce入门</h1><h1 id="13-GitHub托管项目"><a href="#13-GitHub托管项目" class="headerlink" title="13. GitHub托管项目"></a>13. GitHub托管项目</h1><h1 id="14-持续继承Jenkins入门"><a href="#14-持续继承Jenkins入门" class="headerlink" title="14. 持续继承Jenkins入门"></a>14. 持续继承Jenkins入门</h1>
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/06/13/手把手教你github搭建个人博客/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2017/06/13/Selenium 2 自动化测试实例/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入 | BigJeffWang&#39;s Blog 王晔的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="BigJeffWang,前端,测试,开发,用户体验,设计,frontend,design,nodejs,JavaScript,Python,Selenium" />
+  
+
+  <meta name="description" content="目录:  [TOC] 1. 安装sublime text 31. 安装1.1 安装过程非常简单,在terminal中输入：  sudo add-apt-repository ppa:webupd8team/sublime-text-3 #添加sublime text 3的仓库 sudo apt-get update #更新软件库 sudo apt-get install sublime-text-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入">
+<meta property="og:url" content="http://yoursite.com/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/index.html">
+<meta property="og:site_name" content="BigJeffWang&#39;s Blog 王晔的博客">
+<meta property="og:description" content="目录:  [TOC] 1. 安装sublime text 31. 安装1.1 安装过程非常简单,在terminal中输入：  sudo add-apt-repository ppa:webupd8team/sublime-text-3 #添加sublime text 3的仓库 sudo apt-get update #更新软件库 sudo apt-get install sublime-text-">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6298250-c41275ef170235a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6298250-19b2b5daa1725ae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6298250-a483d49c60a69ad2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6298250-bcb2465246401a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6298250-67d8e5f2052b1b4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6298250-d8f6faf5886b60ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-13T10:17:05.735Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入">
+<meta name="twitter:description" content="目录:  [TOC] 1. 安装sublime text 31. 安装1.1 安装过程非常简单,在terminal中输入：  sudo add-apt-repository ppa:webupd8team/sublime-text-3 #添加sublime text 3的仓库 sudo apt-get update #更新软件库 sudo apt-get install sublime-text-">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6298250-c41275ef170235a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">目录:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-安装sublime-text-3"><span class="toc-text">1. 安装sublime text 3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装"><span class="toc-text">1. 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-安装过程非常简单-在terminal中输入："><span class="toc-text">1.1 安装过程非常简单,在terminal中输入：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-使用"><span class="toc-text">1.2 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-卸载"><span class="toc-text">1.3 卸载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装插件"><span class="toc-text">2. 安装插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-安装-Package-Control-插件管理器"><span class="toc-text">2.1 安装 Package Control 插件管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-安装anaconda插件"><span class="toc-text">2.2 安装anaconda插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-安装Markdown用到的插件和编译器中文汉化插件"><span class="toc-text">2.3 安装Markdown用到的插件和编译器中文汉化插件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-相对的完美解决汉化问题"><span class="toc-text">2. 相对的完美解决汉化问题</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.06.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>BigJeffWang</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://github.com/BigJeffWang/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1>目录:</h1>
+
+<p>[TOC]</p>
+<h1 id="1-安装sublime-text-3"><a href="#1-安装sublime-text-3" class="headerlink" title="1. 安装sublime text 3"></a>1. 安装sublime text 3</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><h3 id="1-1-安装过程非常简单-在terminal中输入："><a href="#1-1-安装过程非常简单-在terminal中输入：" class="headerlink" title="1.1 安装过程非常简单,在terminal中输入："></a>1.1 安装过程非常简单,在terminal中输入：</h3><blockquote>
+<ol>
+<li>sudo add-apt-repository ppa:webupd8team/sublime-text-3 #添加sublime text 3的仓库</li>
+<li>sudo apt-get update #更新软件库</li>
+<li>sudo apt-get install sublime-text-installer #安装Sublime Text 3</li>
+</ol>
+</blockquote>
+<h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><p>在terminal中输入：</p>
+<blockquote>
+<p>subl</p>
+</blockquote>
+<h3 id="1-3-卸载"><a href="#1-3-卸载" class="headerlink" title="1.3 卸载"></a>1.3 卸载</h3><blockquote>
+<p>sudo apt-get remove sublime-text-installer</p>
+</blockquote>
+<h2 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件</h2><h3 id="2-1-安装-Package-Control-插件管理器"><a href="#2-1-安装-Package-Control-插件管理器" class="headerlink" title="2.1 安装 Package Control 插件管理器"></a>2.1 安装 Package Control 插件管理器</h3><ol>
+<li><p>从 Sublime Text 3 官方获取用于安装的代码。(<a href="https://packagecontrol.io/installation#st3" target="_blank" rel="external">地址请点击这里</a>)<br>1.1 或者从这里粘贴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;df21e130d211cfc94d9b0905775a7c0f&apos; + &apos;1e3d39e33b79698005270310898eea76&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
+</li>
+<li><p>在sublime text 3的窗口上方,依次点击 View &gt; Show Console 打开的控制台<br>2.1 <img src="http://upload-images.jianshu.io/upload_images/6298250-c41275ef170235a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>2.2 <img src="http://upload-images.jianshu.io/upload_images/6298250-19b2b5daa1725ae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li>把刚才从官网粘贴的代码,复制到控制台的输入框里,并回车</li>
+<li>其他一些相关命令如下：<br>List Packages 显示所有已安装的插件<br>Remove Packages 移除一个指定的插件<br>Upgrade Package 更新一个指定的插件<br>Upgrade/Overwrite All Packages 更新所有已安装的插件</li>
+</ol>
+<h3 id="2-2-安装anaconda插件"><a href="#2-2-安装anaconda插件" class="headerlink" title="2.2 安装anaconda插件"></a>2.2 安装anaconda插件</h3><p>####2.2.1 介绍<br>Anaconda 是一个终极 <a href="http://lib.csdn.net/base/python" target="_blank" rel="external">Python</a> 插件。它为 ST3 增添了多项 IDE 类似的功能，例如：</p>
+<ul>
+<li>Autocompletion 自动完成，该选项默认开启，同时提供多种配置选项。</li>
+<li>Code linting 使用支持 pep8 标准的 PyLint 或者 PyFlakes。因为我个人使用的是另外的 linting 工具，所以我会在 Anaconda 的配置文件 Anaconda.sublime-settings 中将 linting 完全禁用。操作如下: Sublime &gt; Preferences &gt; Package Settings &gt; Anaconda &gt; Settings – User： {“anaconda_linting”: false}</li>
+<li>McCabe code complexity checker 让你可以在特定的文件中使用 McCabe complexity checker. 如果你对软件复杂度检查工具不太熟悉的话，请务必先浏览上边的链接。</li>
+<li>Goto Definitions 能够在你的整个工程中查找并且显示任意一个变量，函数，或者类的定义。</li>
+<li>Find Usage 能够快速的查找某个变量，函数或者类在某个特定文件中的什么地方被使用了。</li>
+<li>Show Documentation： 能够显示一个函数或者类的说明性字符串(当然，是在定义了字符串的情况下)</li>
+</ul>
+<p>####2.2.2 anaconda安装<br>快捷键 cmd+shift+P 打开 Package Control 来安装其他的插件了。输入 install 然后你就能看见屏幕上出现了 Package Control: Install Package，点击回车然后搜索你想要的插件</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6298250-a483d49c60a69ad2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>点击Anaconda安装,当然我已经装过了,所以列表里,没有.</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6298250-bcb2465246401a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>####2.2.3 配置</p>
+<ol>
+<li>打开终端输入<blockquote>
+<p>whereis python</p>
+</blockquote>
+</li>
+<li>选择Preferences-Package Settings-Anacoda-Settings-Default选项，搜寻“python_interpreter” ， 并将“python_interpreter”：”Python” 改为“python_interpreter”：”/usr/bin/python2.7” (这里根据第一步显示的结果)<br>2.1 如图:<img src="http://upload-images.jianshu.io/upload_images/6298250-67d8e5f2052b1b4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+<li><p>选择Preferences-Package Settings-Anacoda-Settings-Users选项，键入以下json数据。保存，重启ST3即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">    &quot;python_interpreter&quot;: &quot;/usr/bin/python2.7&quot;,</div><div class="line">    &quot;suppress_word_completions&quot;: true,</div><div class="line">    &quot;suppress_explicit_completions&quot;: true,</div><div class="line">    &quot;complete_parameters&quot;: true,</div><div class="line">    &quot;anaconda_linting&quot;:false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>测试,接下来，就会发现，ST3编写python代码时会有提示功能。 </p>
+</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/6298250-d8f6faf5886b60ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="2-3-安装Markdown用到的插件和编译器中文汉化插件"><a href="#2-3-安装Markdown用到的插件和编译器中文汉化插件" class="headerlink" title="2.3 安装Markdown用到的插件和编译器中文汉化插件"></a>2.3 安装Markdown用到的插件和编译器中文汉化插件</h3><p><a href="http://www.jianshu.com/p/aa30cc25c91b" target="_blank" rel="external">这里有一篇,写的很详细,可以点击看看</a></p>
+<ul>
+<li><strong>打开sublime txt3&gt;Ctrl+shift+P &gt; install Package &gt; 复制以下插件名即可安装</strong>:</li>
+<li><strong>Chinese</strong> : <strong>汉化!</strong>喜欢用英文的,建议不装!</li>
+<li><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkDown Editing</a> : 支持Markdown语法高亮；支持Github Favored Markdown语法；自带3个主题。</li>
+<li><a href="https://github.com/revolunet/sublimetext-markdown-preview" target="_blank" rel="external">MarkdownPreview</a>：按CTRL + B 生成网页HTML；在最前面添加[TOC]自动生成目录；</li>
+<li><a href="http://theo.im/OmniMarkupPreviewer/" target="_blank" rel="external">OmniMarkupPreviwer</a>：<strong>实时</strong>在浏览器中预，而MarkdownPreview是需要手动生成的和F5的。览如果双屏的话，应该具有不错的体验。快捷键如下：<ul>
+<li>Ctrl+Alt+O: Preview Markup in Browser. 这个非常有用!!!</li>
+<li>Ctrl+Alt+X: Export Markup as HTML.</li>
+<li>Ctrl+Alt+C: Copy Markup as HTML.</li>
+</ul>
+</li>
+<li><a href="https://github.com/naokazuterada/MarkdownTOC" target="_blank" rel="external">Markdown TOC</a>：编辑MD文件的时候可以查看自动生成，并且可以控制生产目录的层次，不过不会自动跳转。编辑的时候可以看看，如果需要生成的HTML具有超链接跳转的功能，还是用MarkdownPreview吧。<br><strong>Sublime Text 系列</strong><br><a href="http://www.jianshu.com/p/d1b9a64e2e37" target="_blank" rel="external">Sublime Text：学习资源篇</a><br><a href="http://www.jianshu.com/p/5905f927d01b" target="_blank" rel="external">Sublime插件：增强篇</a><br><a href="http://www.jianshu.com/p/aa30cc25c91b" target="_blank" rel="external">Sublime插件：Markdown篇</a><br><a href="http://www.jianshu.com/p/595975a2a5f3" target="_blank" rel="external">Sublime插件：C语言篇</a><br><a href="http://www.jianshu.com/p/13fedee165f1" target="_blank" rel="external">Sublime插件：主题篇</a><br><a href="http://www.jianshu.com/p/3a8555c273d8" target="_blank" rel="external">Sublime插件：Git篇</a><br><a href="http://www.jianshu.com/p/c75d21d2e967" target="_blank" rel="external">Sublime 小技巧：文本自动换行显示？</a></li>
+</ul>
+<h1 id="2-相对的完美解决汉化问题"><a href="#2-相对的完美解决汉化问题" class="headerlink" title="2. 相对的完美解决汉化问题"></a>2. 相对的完美解决汉化问题</h1><p><em>本经验目前在Ubuntu14.04环境下，已有搜狗输入法 for Linux和Sublime Text 3的情况下安装成功。</em><br>步骤:</p>
+<ol>
+<li>安装 C/C++ 的编译环境和 gtk libgtk2.0-dev<blockquote>
+<ol>
+<li>sudo apt-get install build-essential</li>
+<li>sudo apt-get install libgtk2.0-dev</li>
+</ol>
+</blockquote>
+</li>
+<li><p>保存下面的代码到文件sublime_imfix.c(位于~目录)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#include &lt;gtk/gtkimcontext.h&gt;</div><div class="line">void gtk_im_context_set_client_window (GtkIMContext *context,</div><div class="line">         GdkWindow    *window)</div><div class="line">&#123;</div><div class="line"> GtkIMContextClass *klass;</div><div class="line"> g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line"> klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line"> if (klass-&gt;set_client_window)</div><div class="line">   klass-&gt;set_client_window (context, window);</div><div class="line"> g_object_set_data(G_OBJECT(context),&quot;window&quot;,window);</div><div class="line"> if(!GDK_IS_WINDOW (window))</div><div class="line">   return;</div><div class="line"> int width = gdk_window_get_width(window);</div><div class="line"> int height = gdk_window_get_height(window);</div><div class="line"> if(width != 0 &amp;&amp; height !=0)</div><div class="line">   gtk_im_context_focus_in(context);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>将上一步的代码编译成共享库libsublime-imfix.so，命令</p>
+<blockquote>
+<ol>
+<li>cd ~</li>
+<li>gcc -shared -o libsublime-imfix.so sublime_imfix.c  <code>pkg-config --libs --cflags gtk+-2.0</code> -fPIC</li>
+</ol>
+</blockquote>
+</li>
+<li>然后将libsublime-imfix.so拷贝到sublime_text所在文件夹<blockquote>
+<p>sudo mv libsublime-imfix.so /opt/sublime_text/</p>
+</blockquote>
+</li>
+<li><p>修改文件/usr/bin/subl的内容</p>
+<blockquote>
+<ol>
+<li>sudo gedit /usr/bin/subl</li>
+<li>将源文件修改<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\#!/bin/sh </div><div class="line">exec /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">\#!/bin/sh</div><div class="line">export LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so</div><div class="line">exec /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>此时，在命令中执行 subl 将可以使用搜狗for linux的中文输入</p>
+</li>
+<li>为了使用鼠标右键打开文件时能够使用中文输入，还需要修改文件sublime_text.desktop的内容。<ol>
+<li><blockquote>
+<p>sudo gedit /usr/share/applications/sublime_text.desktop<br>将[Desktop Entry]中的字符串<br>Exec=/opt/sublime_text/sublime_text %F<br>修改为<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec  /opt/sublime_text/sublime_text %F”</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>将[Desktop Action Window]中的字符串<br>Exec=/opt/sublime_text/sublime_text -n<br>修改为<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec   /opt/sublime_text/sublime_text -n”</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>将[Desktop Action Document]中的字符串<br>Exec=/opt/sublime_text/sublime_text –command new_file<br>修改为<br>Exec=bash -c “LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec   /opt/sublime_text/sublime_text –command new_file”</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>注意：<br>修改时请注意双引号””,否则会导致不能打开带有空格文件名的文件。<br>此处仅修改了/usr/share/applications/sublime-text.desktop，但可以正常使用了。<br>opt/sublime_text/目录下的sublime-text.desktop可以修改，也可不修改。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>经过以上步骤我们能在Sublime中输入中文了。如果感觉对你有帮助的话,请给我点个赞或分享给他人</strong></p>
+<p>分销几个别人总结的Markdown的文章:</p>
+<ul>
+<li><a href="(http://blog.leanote.com/post/freewalk/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C#title-5)">Markdown 语法手册 （完整整理版）</a></li>
+<li><a href="(http://www.appinn.com/markdown/#header)">Markdown 语法说明 (简体中文版)</a></li>
+<li></li>
+</ul>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/06/13/Selenium 2 自动化测试实例/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2017/06/13/Linux 下安装 Sublime Text3 配置Markdown 和 python插件 完美解决不能中文输入/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
