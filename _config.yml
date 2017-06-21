@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
+title: BigJeffWang's Blog 王晔的博客
+subtitle: BigJeffWang's Blog
+description: BigJeffWang's Blog
+author: BigJeffWang
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://yoursite.com/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -62,10 +62,14 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+# plugins: hexo-renderer-mathjax
 ## Themes: https://hexo.io/themes/
-theme: landscape
+# theme: landscape
+theme: fexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: git@github.com:BigJeffWang/bigjeffwang.github.io.git
+  branch: master
